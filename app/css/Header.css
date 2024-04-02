@@ -1,0 +1,50 @@
+header {
+    background-color: rgba(94, 141, 147, 1);
+    color: white;
+    padding: 5px ;
+    display: flex;
+    justify-content:stretch;
+
+    position: sticky;
+}
+
+
+.logo {
+    left: 12px;
+    margin-left: 0%;
+    padding-right: 10px;
+    background-color: rgba(248, 246, 241, 0);
+    border-radius: 50%;
+}
+.logo img {
+    width: 80px;
+    position: relative;
+    left:auto;
+}
+.Fit {
+    margin-right: 20%;
+    margin-left: 0%;
+    background-color: rgba(248, 246, 241, 0);
+    font-size: 40px;
+}
+
+.navbuttons {
+    
+    display: flex;
+    justify-content: spaces-evenly;
+    padding: 15px 0px;
+}
+
+
+button {
+    background-color: rgb(56, 94, 94);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;  
+    margin-right: 15px;
+
+}
+
+
