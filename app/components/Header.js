@@ -4,15 +4,15 @@ import '../css/Header.css'
 const Header = (props) => {  
     return (
         <header>
-             
-            
-            <button className='logo'><img src='/images/Frame.png' alt="Logo" /></button>
-            <button className='Fit'> FitStar</button>
+            <a href="/" className='logo'>
+                <img src='/images/Frame.png' alt="Logo" />
+            </a>
+            <a href="/" className='Fit'>FitStar</a>
             <div className='navbuttons'>
-            <button>Home</button>
-            <button>Check Activity</button>
-            <button>Demo</button>
-            <button>Login/Create Account</button>
+                <button>Home</button>
+                <button>Check Activity</button>
+                <button>Demo</button>
+                <button>Login/Create Account</button>
             </div>
        </header>
     );
