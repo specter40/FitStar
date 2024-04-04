@@ -8,17 +8,48 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
 
-    
+#titleLogo {
+    width: 150px;
+    position: relative;
+    border-radius: 40%;
+    margin-right: 30px;
 }
 
 h1 {
     font-family: 'Inika';
     color: #FFF;
     text-align: center;
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: #000;
     font-style: normal;
     font-weight: bold;
     font-size: 96px;
+    margin: 0px;
+}
+
+h2 {
+    font-family: 'Inika';
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    padding-top: 50px;
+    width: 100%;
+}
+
+#start{
+    padding: 10px 20px;
+    background-color: white;
+    color: gray;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 30px;  
+    font-family: 'Inika';
+    margin: auto;
 }
