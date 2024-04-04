@@ -65,6 +65,7 @@ button{
     font-family: 'Inika';
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 5px;
 }
 
 button:hover {
@@ -81,6 +82,9 @@ button:hover {
     font-family: 'Inika';
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 5px;
+    box-shadow: 0 4px 8px 0 rgba(19, 64, 116, 0.2);
+    transition: 0.3s;
 }
 
 
