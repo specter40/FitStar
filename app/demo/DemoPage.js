@@ -3,7 +3,7 @@ import React from "react";
 import Card from "../components/Card.js";
 
 const DemoPage = (props) => {
-    const days = [
+    const items = [
         {   day: "Monday",
             activity: "Running",
             time: 30,
@@ -39,12 +39,12 @@ const DemoPage = (props) => {
             time: 60,
             calories: 500,
             heart: 140
-        },
+        }
     ]
     
     return (
         <div>
-            <div><h1>Demo</h1></div>
+            <div className="title"><h1>Demo</h1></div>
             <div>
                 <ItemList listItems={days} />
             </div>
