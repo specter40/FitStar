@@ -1,0 +1,15 @@
+/* imports the Inika font */
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+
+.page {
+    background-image: url('/images/Background.jpg');
+    margin: 0px;
+    padding: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+}
+
+a {
+    text-decoration: none;
+}
