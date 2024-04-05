@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import "./globals.css";
 import Header from "./components/Header";
 import Homepage from "./components/Homepage";
 import AddItem from "./components/AddItem";
@@ -6,7 +6,7 @@ import AddItem from "./components/AddItem";
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Header loggedIn = {false}/>
       <Homepage />
       <AddItem />
     </div>

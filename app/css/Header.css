@@ -7,8 +7,10 @@ header {
     padding: 5px ;
     display: flex;
     justify-content:stretch;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 
-    position: sticky;
 }
 
 .logo {
@@ -16,12 +18,12 @@ header {
     margin-left: 0%;
     padding-right: 10px;
     background-color: rgba(248, 246, 241, 0);
-    border-radius: 50%;
 }
 .logo img {
     width: 80px;
     position: relative;
     left:auto;
+    border-radius: 40%;
 }
 .Fit {
     display: flex;
@@ -38,27 +40,50 @@ header {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: #000;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 900;
     margin-top: 10px;
+
 }
 
 .navbuttons {
-    
     display: flex;
-    justify-content: spaces-evenly;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
     padding: 15px 0px;
+    padding-left: 10%;
 }
 
+button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #5E8D93;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 30px;  
+    margin-right: 15px;
+    font-family: 'Inika';
+    padding-left: 30px;
+    padding-right: 30px;
+}
 
-button {
+button:hover {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     background-color: rgb(56, 94, 94);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 18px;  
+    font-size: 30px;  
     margin-right: 15px;
     font-family: 'Inika';
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 
