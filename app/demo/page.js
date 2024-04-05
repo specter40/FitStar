@@ -5,7 +5,7 @@ import DemoPage from "../demo/DemoPage";
 export default function Home() {
     return (
         <div>
-            <Header loggedIn={true} />
+            <Header loggedIn={true}/>
             <DemoPage />
         </div>
     );
