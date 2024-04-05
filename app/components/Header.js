@@ -27,6 +27,9 @@ const Header = (props) => {
    const demoHandler = () => {
        router.push("/demo")
    }
+   const homeHandler = () => {
+        router.push("/");
+   }
 
 
    const statusLog = logger()
@@ -40,7 +43,7 @@ const Header = (props) => {
             </a>
             <a href="/" className='Fit'>FitStar</a>
             <div className='navbuttons'>
-                <button>Home</button>
+                <button on onClick={homeHandler}>Home</button>
                 <button>Check Activity</button>
                 <button on onClick={demoHandler}>Demo</button>
                 <button onClick={logHandler}>{statusLog}</button>
