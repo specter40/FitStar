@@ -1,6 +1,7 @@
 import "./css/DemoPage.css";
 import React from "react";
 import Card from "../components/Card.js";
+import ItemList from "../components/ItemList.js";
 
 const DemoPage = (props) => {
     const items = [
@@ -46,7 +47,7 @@ const DemoPage = (props) => {
         <div>
             <div className="title"><h1>Demo</h1></div>
             <div>
-                <ItemList listItems={days} />
+                <ItemList listItems={items} />
             </div>
         </div>
     );
