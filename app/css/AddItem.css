@@ -1,0 +1,11 @@
+#page {
+    background-color: #293143;
+    display: flex;
+    justify-content: center;
+}
+
+#main_form {
+    background-color: #D9D9D9;
+    width: 800px;
+    height: 600px;
+}
