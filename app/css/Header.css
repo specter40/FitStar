@@ -7,7 +7,7 @@ header {
     padding: 5px ;
     display: flex;
     justify-content:stretch;
-    position: fixed;
+    position: relative;
     width: 100%;
     z-index: 100;
 
