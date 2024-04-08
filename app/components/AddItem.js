@@ -9,7 +9,6 @@ import '../css/AddItem.css';
 const AddItem = () => {
 
     return (
-                <option>Weight Training</option>
         <div id="page">
             <div id="main_form">
                 <div class="chunk">
