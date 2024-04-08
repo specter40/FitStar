@@ -62,7 +62,7 @@ const AddItem = () => {
                 <option>Arms - Biceps</option>
                 <option>Arms - Triceps</option>
                 <option>Arms - Shoulders</option>
-                <option>Arms</option>
+                <option>Arms - Forearms</option>
             </select>
 
             <label for="weight">Weight Used:</label>
