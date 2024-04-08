@@ -47,8 +47,22 @@ const AddItem = () => {
             <span>calories</span>
 
             <label for="weight_train_type">What type of weight training?</label>
-            <select multiple id="weight_train_type">
-                <option>1</option>
+            <select id="weight_train_type">
+                <option>Traditional Strength Training</option>
+                <option>Functional Weight Training </option>
+            </select>
+
+            <label for="body_train_type">Which part of your body did you train?</label>
+            <select multiple id="body_train_type">
+                <option>Legs - Quads</option>
+                <option>Legs - Hamstrings </option>
+                <option>Legs - Calves</option>
+                <option>Legs - Glutes</option>
+                <option>Core Strength - Abs</option>
+                <option>Arms - Biceps</option>
+                <option>Arms - Triceps</option>
+                <option>Arms - Shoulders</option>
+                <option>Arms - Forearms</option>
             </select>
 
             <label for="weight">Weight Used:</label>
