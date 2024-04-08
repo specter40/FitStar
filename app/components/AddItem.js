@@ -10,7 +10,7 @@ const AddItem = () => {
     return (
         <div id="page">
             <div id="main_form">
-                <div class="chunk">
+                <div id="date_container" class="chunk">
                     <label for="date" class="date_style">Date:</label>
                     <input id="date" class="date_style"
                         type="date"  
@@ -71,20 +71,24 @@ const AddItem = () => {
 
                             <br />
                         </div>
+                        
+                    </div>
+
+                    <div class="column">
 
                         <div class="chunk">
                             <label for="weight_train_type">What type of weight training?</label>
                             <br />
                             <select multiple id="weight_train_type">
-                                <option>1</option>
+                                <option>words idk</option>
+                                <option>words idk</option>
+                                <option>words idk</option>
+                                <option>words idk</option>
                             </select>
 
                             <br />
                         </div>
-
-                    </div>
-
-                    <div class="column">
+                
                         <div class="chunk">
                             <label for="weight">Weight Used:</label>
                             <br />
@@ -121,6 +125,10 @@ const AddItem = () => {
 
                             <br />
                         </div>
+
+                    </div>
+
+                    <div class="column">
 
                         <div class="chunk">
                             <label for="moderate_advanced">Moderate or Advanced hiking?</label>
@@ -167,7 +175,8 @@ const AddItem = () => {
                         </div>
                     </div>
                 </div>
-            
+
+                <button id="add_info">Add to Activity</button>
             </div>
         </div>
     );

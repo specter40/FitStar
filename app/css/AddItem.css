@@ -13,7 +13,8 @@
     height: auto;
     display: flex;
     justify-content: center;
-    
+    align-items: center;
+    flex-direction: column;
     margin: 40px;
     border-radius: 50px;
     padding: 20px;
@@ -24,6 +25,12 @@
         border-radius: 15px;
     }
 
+#column_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
     .column {
         flex: 1;
     }
@@ -32,7 +39,12 @@
         padding: 15px;
     }
 
-label, input, option, span {
+#add_info {
+    background-color: rgba(94, 141, 147, 1);
+
+}
+
+label, input, option, span, button {
     font-family: 'Inika';
 }
 
