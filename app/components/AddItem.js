@@ -1,6 +1,5 @@
 // source imports
 import React from 'react';
-import Header from './Header.js';
 
 // css import
 import '../css/AddItem.css';
