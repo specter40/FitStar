@@ -1,13 +1,13 @@
 /* imports the Inika font */
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
 .demo {
-
-flex-shrink: 0;
+    flex-shrink: 0;
     justify-content: center;
     position: relative;
     bottom: 100px;
     border-radius: 69px;
     background: rgba(76, 92, 126, 0.80);
+    padding: 70px;
 }
 
 #toplevel {
@@ -27,7 +27,6 @@ flex-shrink: 0;
     font-size: 96px;
     margin: 0px;
     font-weight: 900;
-
 }
 
 .demo h2 {
@@ -44,8 +43,8 @@ flex-shrink: 0;
 
 .background {
     background-image: url('/images/Background.jpg');
-    margin: 0px;
-    padding: 200px;
+    margin: 0;
+    padding: 450px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

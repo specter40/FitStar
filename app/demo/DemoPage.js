@@ -45,11 +45,13 @@ const DemoPage = (props) => {
     
     return (
         <div className="background">
-            <h1>Demo</h1>
-            <div className="demo">
-                <h2>Recent Activity</h2>
-                <div>
-                    <ItemList listItems={items} />
+            <div className="container">
+                <h1>Demo</h1>
+                <div className="demo">
+                    <h2>Recent Activity</h2>
+                    <div>
+                        <ItemList listItems={items} />
+                    </div>
                 </div>
             </div>
         </div>
