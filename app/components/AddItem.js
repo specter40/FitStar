@@ -7,6 +7,78 @@ import '../css/AddItem.css';
 
 const AddItem = () => {
 
+    const [enteredDate, setEnteredDate] = React.useState('');
+    const [enteredExerciseType, setEnteredExerciseType] = React.useState('');
+    const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
+    const [enteredDistance, setEnteredDistance] = React.useState('');
+    const [enteredCaloriesBurned, setEnteredCaloriesBurned] = React.useState('');
+    const [enteredBodyTrainType, setEnteredBodyTrainType] = React.useState('');
+    const [enteredWeight, setEnteredWeight] = React.useState('');
+    const [enteredReps, setEnteredReps] = React.useState('');
+    const [enteredSets, setEnteredSets] = React.useState('');
+    const [enteredDistanceHiking, setEnteredDistanceHiking] = React.useState('');
+    const [enteredModerateAdvanced, setEnteredModerateAdvanced] = React.useState('');
+    const [enteredIndoorOutdoorCycling, setEnteredIndoorOutdoorCycling] = React.useState('');
+    const [enteredDistanceCycling, setEnteredDistanceCycling] = React.useState('');
+    const [enteredDistanceSwimming, setEnteredDistanceSwimming] = React.useState('');
+
+    const dateHandler = (event) => {
+        setEnteredDate(event.target.value);
+    };
+
+    const exerciseTypeHandler = (event) => {
+        setEnteredExerciseType(event.target.value);
+    };
+
+    const indoorOutdoorHandler = (event) => {
+        setEnteredIndoorOutdoor(event.target.value);
+    };
+
+    const distanceHandler = (event) => {
+        setEnteredDistance(event.target.value);
+    };
+
+    const caloriesHandler = (event) => {
+        setEnteredCaloriesBurned(event.target.value);
+    };
+
+    const bodyTrainHandler = (event) => {
+        setEnteredBodyTrainType(event.target.value);
+    };
+
+    const weightHandler = (event) => {
+        setEnteredWeight(event.target.value);
+    };
+
+    const repsHandler = (event) => {
+        setEnteredReps(event.target.value);
+    };
+
+    const setsHandler = (event) => {
+        setEnteredSets(event.target.value);
+    };
+
+    const distanceHikingHandler = (event) => {
+        setEnteredDistanceHiking(event.target.value);
+    };
+
+    const moderateAdvancedHandler = (event) => {
+        setEnteredModerateAdvanced(event.target.value);
+    };
+
+    const indoorOutdoorCyclingHandler = (event) => {
+        setEnteredIndoorOutdoorCycling(event.target.value);
+    };
+
+    const distanceCyclingHandler = (event) => {
+        setEnteredDistanceCycling(event.target.value);
+    };
+
+    const distanceSwimmingHandler = (event) => {
+        setEnteredDistanceSwimming(event.target.value);
+    };
+
+
     return (
         <div id="page">
             <div id="main_form">
