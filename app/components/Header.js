@@ -24,11 +24,17 @@ const Header = (props) => {
             router.push("/loggedIn")
        }
    }
+
    const demoHandler = () => {
        router.push("/demo")
    }
+
    const homeHandler = () => {
         router.push("/");
+   }
+
+   const checkActivityHandler = () => {
+        router.push("/loggedIn");
    }
 
 
@@ -45,7 +51,7 @@ const Header = (props) => {
             <a href="/" className='Fit'>FitStar</a>
             <div className='navbuttons'>
                 <button on onClick={homeHandler}>Home</button>
-                <button>Check Activity</button>
+                <button onClick={checkActivityHandler}>Check Activity</button>
                 <button on onClick={demoHandler}>Demo</button>
                 <button onClick={logHandler}>{statusLog}</button>
             </div>
