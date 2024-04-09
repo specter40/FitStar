@@ -2,19 +2,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
 
 .page {
-    background-image: url('/images/Background.jpg');
-    margin: 0px;
-    padding: 450px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;  
+    background: #D6D1D1;
+    margin: 0;
+    padding: 200px;
+}
+
+.page h1{
+    color: rgba(54, 57, 59, 0.50);
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: rgba(54, 57, 59, 0.50);
+}
+
+.container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    flex-shrink: 0;
+    justify-content: center;
+    position: relative;
+    bottom: 100px;
+    border-radius: 69px;
+    background: rgba(106, 159, 165, 0.50);
+    margin: 0;
+    padding: 100px;
+    font-family: 'Inika';
+}
+
+#star{
+    position: absolute; 
+    top: 70px; 
+    left: 0; 
+    transform: translate(-50%, -50%);
 }
 
 .logo{
-    width: 80px;
+    width: 100px;
     position: relative;
     left:auto;
-    border-radius: 40%;
+    border-radius: 20%;
 }
 
 a {
