@@ -1,10 +1,15 @@
 "use client";
 import '../signIn/css/SignIn.css';
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/navigation'
 
-const SignIn = () => {
+const SignIn = (props) => {
     let username = '';
     let password = '';
+
+    const router = useRouter()
+    const createHandler = () => {
+        router.push("/createAccount");
+    }
 
     // handles login
     const handleLogin = async () => {
@@ -25,7 +30,7 @@ const SignIn = () => {
             <h3>Password</h3>
             <input id='password' type="password" value={password} onChange= {(event) => setPassword(event.target.value)}/>
             <button onClick={handleLogin}>Login</button>
-            <a>Create a new account</a>
+            <a onClick={createHandler}>Create a new account</a>
         </div>
     );
 };

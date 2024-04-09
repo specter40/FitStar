@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
+"use client"
 import './css/CreateAccount.css';
 
 const CreateAccount = () => {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const router = useRouter();
+    let username = '';
+    let password = '';
+    let email = '';
 
     // Function to handle form submission
     const handleCreateAccount = async () => {
