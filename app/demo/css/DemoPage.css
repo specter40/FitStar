@@ -10,7 +10,7 @@ flex-shrink: 0;
     background: rgba(76, 92, 126, 0.80);
 }
 
-.background h1 {
+.container h1 {
     font-family: 'Inika';
     position: relative;
     bottom: 130px;
@@ -21,9 +21,8 @@ flex-shrink: 0;
     font-style: normal;
     font-weight: bold;
     font-size: 96px;
-    margin: 0px;
+    margin: 0;
     font-weight: 900;
-
 }
 
 .demo h2 {
@@ -40,12 +39,10 @@ flex-shrink: 0;
 
 .background {
     background-image: url('/images/Background.jpg');
-    margin: 0px;
+    margin: 0;
     padding: 200px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     justify-content: center;
-    font-family: Inika;
-    
 }
