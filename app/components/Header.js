@@ -21,7 +21,7 @@ const Header = (props) => {
             router.push("/");
         }
         else {
-          
+          router.push("/signIn");
        }
    }
    const demoHandler = () => {
