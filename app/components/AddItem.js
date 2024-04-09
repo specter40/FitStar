@@ -29,7 +29,8 @@ const AddItem = () => {
     };
 
     const exerciseTypeHandler = (event) => {
-        setEnteredExerciseType(event.target.value);
+        const selectedOptions = Array.from(event.target.selectedOptions, option => option.value);
+        setEnteredExerciseType(selectedOptions);
     };
 
     const indoorOutdoorHandler = (event) => {
