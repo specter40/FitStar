@@ -80,6 +80,25 @@ const AddItem = () => {
         setEnteredDistanceSwimming(event.target.value);
     };
 
+    const addUserHandler = (event) =>{
+        event.preventDefault();
+        setEnteredDate('');
+        setEnteredExerciseType('');
+        setEnteredIndoorOutdoor('');
+        setEnteredDistance('');
+        setEnteredCaloriesBurned('');
+        setEnteredBodyTrainType('');
+        setEnteredWeight('');
+        setEnteredReps('');
+        setEnteredSets('');
+        setEnteredDistanceHiking('');
+        setEnteredModerateAdvanced('');
+        setEnteredIndoorOutdoorCycling('');
+        setEnteredDistanceCycling('');
+        setEnteredDistanceSwimming('');
+    }
+
+    const isLoggedIn = true; 
 
     return (
         <div id="page">
@@ -279,9 +298,8 @@ const AddItem = () => {
                         </div>
                     </div>
                 </div>
-            
-
-                <button id="add_info">Add to Activity</button>
+        
+                <button id="add_info" onClick={addUserHandler}>Add to Activity</button>
             </div>
         </div>
         </div>
