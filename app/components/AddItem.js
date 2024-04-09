@@ -81,8 +81,26 @@ const AddItem = () => {
         setEnteredDistanceSwimming(event.target.value);
     };
 
-    const addUserHandler = (event) =>{
+    const addItemHandler = (event) =>{
         event.preventDefault();
+        const itemData = {
+            date: enteredDate,
+            exerciseType: enteredExerciseType,
+            indoorOutdoor: enteredIndoorOutdoor,
+            distance: enteredDistance,
+            caloriesBurned: enteredCaloriesBurned,
+            bodyTrainType: enteredBodyTrainType,
+            weight: enteredWeight,
+            reps: enteredReps,
+            sets: enteredSets,
+            distanceHiking: enteredDistanceHiking,
+            moderateAdvanced: enteredModerateAdvanced,
+            indoorOutdoorCycling: enteredIndoorOutdoorCycling,
+            distanceCycling: enteredDistanceCycling,
+            distanceSwimming: enteredDistanceSwimming
+        };
+        console.log(itemData);
+
         setEnteredDate('');
         setEnteredExerciseType('');
         setEnteredIndoorOutdoor('');
@@ -300,7 +318,7 @@ const AddItem = () => {
                     </div>
                 </div>
         
-                <button id="add_info" onClick={addUserHandler}>Add to Activity</button>
+                <button id="add_info" onClick={addItemHandler}>Add to Activity</button>
             </div>
         </div>
         </div>
