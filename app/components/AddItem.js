@@ -1,3 +1,5 @@
+'use client';
+
 // source imports
 import React from 'react';
 
@@ -86,7 +88,9 @@ const AddItem = () => {
                 <div id="date_container" class="chunk">
                     <label for="date" class="date_style">Date:</label>
                     <input id="date" class="date_style"
-                        type="date"  
+                        type="date"
+                        value={enteredDate}
+                        onChange={dateHandler}  
                     />
                     <br />
                 </div>
@@ -96,7 +100,10 @@ const AddItem = () => {
                         <div class="chunk">
                             <label for="exercise_type">What kind of exercise did you do?</label>
                             <br />
-                            <select multiple id="exercise_type">
+                            <select multiple id="exercise_type"
+                                value={enteredExerciseType}
+                                onChange={exerciseTypeHandler}
+                            >
                                 <option>Weight Training</option>
                                 <option>Running</option>
                                 <option>Stretching</option>
