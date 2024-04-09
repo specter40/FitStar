@@ -1,17 +1,21 @@
+"use client";
 import "./css/LoggedPage.css";
 import React from "react";
 import ItemList from "../components/ItemList.js";
+import { useRouter } from 'next/navigation'
 
 const LoggedPage = (props) => {
     const items = [
         
     ]
+    const router = useRouter()
+    
     
     return (
         <div className="background">
-            <h1>Demo</h1>
+            <h1>Hello User!</h1>
             <div className="demo">
-                <div id="toplevel"><h2>Recent Activity</h2><button>Add Activity</button> </div>
+                <div id="toplevel"><h2>Recent Activity</h2><button onClick={() => router.push('/add-activity')}>Add Activity</button> </div>
                 <div>
                     <ItemList listItems={items} />
                 </div>
