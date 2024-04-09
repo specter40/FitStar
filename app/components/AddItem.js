@@ -160,7 +160,10 @@ const AddItem = () => {
                         <div class="chunk">
                             <label for="indoor_outdoor">Indoor or Outdoor Run, Walk, or Jog?</label>
                             <br />
-                            <select id="indoor_outdoor">
+                            <select id="indoor_outdoor"
+                                value={enteredIndoorOutdoor}
+                                onChange={indoorOutdoorHandler}
+                            >
                                 <option>Indoor</option>
                                 <option>Outdoor</option>
                             </select>
@@ -275,7 +278,10 @@ const AddItem = () => {
                         <div class="chunk">
                             <label for="moderate_advanced">Moderate or Advanced hiking?</label>
                             <br />
-                            <select id="moderate_advanced">
+                            <select id="moderate_advanced"
+                                value={enteredModerateAdvanced}
+                                onChange={moderateAdvancedHandler}
+                            >
                                 <option>Moderate</option>
                                 <option>Advanced</option>
                             </select>
@@ -286,7 +292,10 @@ const AddItem = () => {
                         <div class="chunk">
                             <label for="indoor_outdoor_cycling">Indoor or Outdoor Cycling?</label>
                             <br />
-                            <select id="indoor_outdoor_cycling">
+                            <select id="indoor_outdoor_cycling"
+                                value={enteredIndoorOutdoorCycling}
+                                onChange={indoorOutdoorCyclingHandler}
+                            >
                                 <option>Indoor</option>
                                 <option>Outdoor</option>
                             </select>
