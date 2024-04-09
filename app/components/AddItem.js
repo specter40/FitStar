@@ -46,7 +46,8 @@ const AddItem = () => {
     };
 
     const bodyTrainHandler = (event) => {
-        setEnteredBodyTrainType(event.target.value);
+        const selectedOptions = Array.from(event.target.selectedOptions, option => option.value);
+        setEnteredBodyTrainType(selectedOptions);
     };
 
     const weightHandler = (event) => {
@@ -200,7 +201,10 @@ const AddItem = () => {
 
                         <div class="chunk">
                             <label for="body_train_type">Which part of your body did you train?</label>
-                                <select multiple id="body_train_type">
+                            <select multiple id="body_train_type"
+                                value={enteredBodyTrainType}
+                                onChange={bodyTrainHandler}
+                            >
                                     <option>Legs - Quads</option>
                                     <option>Legs - Hamstrings </option>
                                     <option>Legs - Calves</option>
