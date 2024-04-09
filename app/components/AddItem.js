@@ -1,3 +1,5 @@
+'use client';
+
 // source imports
 import React from 'react';
 
@@ -7,6 +9,78 @@ import '../css/AddItem.css';
 
 const AddItem = () => {
 
+    const [enteredDate, setEnteredDate] = React.useState('');
+    const [enteredExerciseType, setEnteredExerciseType] = React.useState('');
+    const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
+    const [enteredDistance, setEnteredDistance] = React.useState('');
+    const [enteredCaloriesBurned, setEnteredCaloriesBurned] = React.useState('');
+    const [enteredBodyTrainType, setEnteredBodyTrainType] = React.useState('');
+    const [enteredWeight, setEnteredWeight] = React.useState('');
+    const [enteredReps, setEnteredReps] = React.useState('');
+    const [enteredSets, setEnteredSets] = React.useState('');
+    const [enteredDistanceHiking, setEnteredDistanceHiking] = React.useState('');
+    const [enteredModerateAdvanced, setEnteredModerateAdvanced] = React.useState('');
+    const [enteredIndoorOutdoorCycling, setEnteredIndoorOutdoorCycling] = React.useState('');
+    const [enteredDistanceCycling, setEnteredDistanceCycling] = React.useState('');
+    const [enteredDistanceSwimming, setEnteredDistanceSwimming] = React.useState('');
+
+    const dateHandler = (event) => {
+        setEnteredDate(event.target.value);
+    };
+
+    const exerciseTypeHandler = (event) => {
+        setEnteredExerciseType(event.target.value);
+    };
+
+    const indoorOutdoorHandler = (event) => {
+        setEnteredIndoorOutdoor(event.target.value);
+    };
+
+    const distanceHandler = (event) => {
+        setEnteredDistance(event.target.value);
+    };
+
+    const caloriesHandler = (event) => {
+        setEnteredCaloriesBurned(event.target.value);
+    };
+
+    const bodyTrainHandler = (event) => {
+        setEnteredBodyTrainType(event.target.value);
+    };
+
+    const weightHandler = (event) => {
+        setEnteredWeight(event.target.value);
+    };
+
+    const repsHandler = (event) => {
+        setEnteredReps(event.target.value);
+    };
+
+    const setsHandler = (event) => {
+        setEnteredSets(event.target.value);
+    };
+
+    const distanceHikingHandler = (event) => {
+        setEnteredDistanceHiking(event.target.value);
+    };
+
+    const moderateAdvancedHandler = (event) => {
+        setEnteredModerateAdvanced(event.target.value);
+    };
+
+    const indoorOutdoorCyclingHandler = (event) => {
+        setEnteredIndoorOutdoorCycling(event.target.value);
+    };
+
+    const distanceCyclingHandler = (event) => {
+        setEnteredDistanceCycling(event.target.value);
+    };
+
+    const distanceSwimmingHandler = (event) => {
+        setEnteredDistanceSwimming(event.target.value);
+    };
+
+
     return (
         <div id="page">
             <div id="main_form">
@@ -14,7 +88,9 @@ const AddItem = () => {
                 <div id="date_container" class="chunk">
                     <label for="date" class="date_style">Date:</label>
                     <input id="date" class="date_style"
-                        type="date"  
+                        type="date"
+                        value={enteredDate}
+                        onChange={dateHandler}  
                     />
                     <br />
                 </div>
@@ -24,7 +100,10 @@ const AddItem = () => {
                         <div class="chunk">
                             <label for="exercise_type">What kind of exercise did you do?</label>
                             <br />
-                            <select multiple id="exercise_type">
+                            <select multiple id="exercise_type"
+                                value={enteredExerciseType}
+                                onChange={exerciseTypeHandler}
+                            >
                                 <option>Weight Training</option>
                                 <option>Running</option>
                                 <option>Stretching</option>
@@ -54,7 +133,9 @@ const AddItem = () => {
                             <label for="distance">Distance for Run, Walk, or Jog?</label>
                             <br />
                             <input id="distance"
-                                type="number" 
+                                type="number"
+                                value={enteredDistance}
+                                onChange={distanceHandler} 
                             />
                             <span> mi</span>
 
@@ -67,6 +148,8 @@ const AddItem = () => {
                             <br />
                             <input id="calories_burned"
                                 type="number"
+                                value={enteredCaloriesBurned}
+                                onChange={caloriesHandler}
                             />
                             <span> calories</span>
 
@@ -103,6 +186,8 @@ const AddItem = () => {
                             <br />
                             <input id="weight"
                                 type="number"
+                                value={enteredWeight}
+                                onChange={weightHandler}
                             />
                             <span> lbs</span>
 
@@ -114,10 +199,14 @@ const AddItem = () => {
                             <br />
                             <input id="sets"
                                 type="number"
+                                value={enteredSets}
+                                onChange={setsHandler}
                             />
                             <span> sets of </span>
                             <input id="reps"
                                 type="number"
+                                value={enteredReps}
+                                onChange={repsHandler}
                             />
                             <span> reps</span>
 
@@ -129,6 +218,8 @@ const AddItem = () => {
                             <br />
                             <input id="distance_hiking"
                                 type="number"
+                                value={enteredDistanceHiking}
+                                onChange={distanceHikingHandler}
                             />
                             <span> mi</span>
 
@@ -166,6 +257,8 @@ const AddItem = () => {
                             <br />
                             <input id="distance_cycling"
                                 type="number"
+                                value={enteredDistanceCycling}
+                                onChange={distanceCyclingHandler}
                             />
                             <span> mi</span>
 
@@ -177,6 +270,8 @@ const AddItem = () => {
                             <br />
                             <input id="distance_swimming"
                                 type="number"
+                                value={enteredDistanceSwimming}
+                                onChange={distanceSwimmingHandler}
                             />
                             <span> mi</span>
 
