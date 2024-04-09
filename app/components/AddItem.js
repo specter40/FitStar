@@ -133,7 +133,9 @@ const AddItem = () => {
                             <label for="distance">Distance for Run, Walk, or Jog?</label>
                             <br />
                             <input id="distance"
-                                type="number" 
+                                type="number"
+                                value={enteredDistance}
+                                onChange={distanceHandler} 
                             />
                             <span> mi</span>
 
@@ -146,6 +148,8 @@ const AddItem = () => {
                             <br />
                             <input id="calories_burned"
                                 type="number"
+                                value={enteredCaloriesBurned}
+                                onChange={caloriesHandler}
                             />
                             <span> calories</span>
 
@@ -182,6 +186,8 @@ const AddItem = () => {
                             <br />
                             <input id="weight"
                                 type="number"
+                                value={enteredWeight}
+                                onChange={weightHandler}
                             />
                             <span> lbs</span>
 
@@ -193,10 +199,14 @@ const AddItem = () => {
                             <br />
                             <input id="sets"
                                 type="number"
+                                value={enteredSets}
+                                onChange={setsHandler}
                             />
                             <span> sets of </span>
                             <input id="reps"
                                 type="number"
+                                value={enteredReps}
+                                onChange={repsHandler}
                             />
                             <span> reps</span>
 
@@ -208,6 +218,8 @@ const AddItem = () => {
                             <br />
                             <input id="distance_hiking"
                                 type="number"
+                                value={enteredDistanceHiking}
+                                onChange={distanceHikingHandler}
                             />
                             <span> mi</span>
 
@@ -245,6 +257,8 @@ const AddItem = () => {
                             <br />
                             <input id="distance_cycling"
                                 type="number"
+                                value={enteredDistanceCycling}
+                                onChange={distanceCyclingHandler}
                             />
                             <span> mi</span>
 
@@ -256,6 +270,8 @@ const AddItem = () => {
                             <br />
                             <input id="distance_swimming"
                                 type="number"
+                                value={enteredDistanceSwimming}
+                                onChange={distanceSwimmingHandler}
                             />
                             <span> mi</span>
 
