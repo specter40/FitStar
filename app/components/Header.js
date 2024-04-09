@@ -21,7 +21,7 @@ const Header = (props) => {
             router.push("/");
         }
         else {
-          
+            router.push("/loggedIn")
        }
    }
    const demoHandler = () => {
@@ -30,6 +30,7 @@ const Header = (props) => {
    const homeHandler = () => {
         router.push("/");
    }
+
 
 
    const statusLog = logger()
