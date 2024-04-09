@@ -7,12 +7,6 @@
     padding: 200px;
 }
 
-.page h1{
-    color: rgba(54, 57, 59, 0.50);
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: rgba(54, 57, 59, 0.50);
-}
-
 .container {
     display: flex; 
     flex-direction: column; 
