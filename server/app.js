@@ -1,24 +1,15 @@
-/*const express = require('express');
-const app = express();
-app.get('/', (req, res) => res.send('Hello world!'));
-const port = process.env.PORT || 8082;
-app.listen(port, () => console.log(`Server running on port
-${port}`));
-*/
-
-
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 8085;
 const mongoose = require('mongoose');
 const cors = require('cors');
 const items = require('./routes/api/items');
-
+const users = require('./routes/api/users');
 
 app.use(cors({origin: true, credentials: true}));
 app.use(express.json({ extended: false })); // added this line to fix PUT request
 app.use('/api/items', items);
-app.get('/', (req, res) => res.send('Hello world!'));
+app.use('/api/users', users);
 
 
 const conn_str = 'mongodb+srv://specter:ayIrmSeFOBvimw6f@mongoexample.uij9ngg.mongodb.net/?retryWrites=true&w=majority&appName=MongoExample'
