@@ -9,6 +9,7 @@ const Schema = mongoose.Schema( {
     password: {
         required: true,
         type: String,
+        minLength: 6,
         trim: true
     },
     username: {
