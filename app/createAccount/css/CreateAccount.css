@@ -1,0 +1,81 @@
+/* imports the Inika font */
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+
+.page {
+    background-image: url('/images/Background.jpg');
+    margin: 0px;
+    padding: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.starContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.starContainer h1 {
+    transform: translate(-50%, -50%) rotate(90deg);
+    font-family: 'Inika';
+    color: #616161;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #616161;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    font-size: 70px;
+}
+
+h2 {
+    font-family: 'Inika';
+    color: #616161;
+    text-align: center;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #616161;
+    font-style: normal;
+    font-size: 40px;
+    margin: 0px;
+    font-weight: 2;
+}
+
+h3 {
+    font-family: 'Inika';
+    color: #616161;
+}
+
+.bodyContainer {
+    margin: auto;
+}
+
+form {
+    background-color: #a1bfc3f1;
+    border-radius: 69px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.logo {
+    border-radius: 40%;
+    width: 150px;
+}
+
+.star {
+    width: 900px;
+    transform: translate(-45%, -10%);
+}
+
+input {
+    padding: 5px;
+}
+
+.accountBt {
+    margin: auto;
+    margin-top: 30px;
+}
+
+.accountBt:hover {
+    margin: auto;
+    margin-top: 30px;
+}
