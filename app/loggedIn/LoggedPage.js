@@ -5,11 +5,19 @@ import ItemList from "../components/ItemList.js";
 import { useRouter } from 'next/navigation'
 
 const LoggedPage = (props) => {
-    const items = [
-        
-    ]
+   const [items, setItems] = React.useState([]);
+
     const router = useRouter()
-    
+    useEffect (() => {
+        axios.get('http://localhost:8085/api/items') 
+        .then(res => {
+            console.log(res.data);
+            setItems(res.data);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    });
     
     return (
         <div className="background">

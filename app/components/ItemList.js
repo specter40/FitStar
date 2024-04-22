@@ -11,7 +11,7 @@ const ItemList = (props) => {
             {props.listItems.map((item) => (
                 
                     <Item 
-                        key={item.day}
+                        key={item._id}
                         day={item.day}
                         activity={item.activity}
                         time={item.time}

@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import axios from 'axios';
 import '../createAccount/css/CreateAccount.css';
 import UserContext from '../context/UserContext';
+import Link from 'next/link';
 
 const CreateAccount = () => {
     //const { setUserData } = useContext(UserContext);
@@ -34,12 +35,13 @@ const CreateAccount = () => {
                 user: loginRes.data.user
             });
             localStorage.setItem('auth-token', loginRes.data.token);
-            router.push("/loggedIn"); // Fixed typo: changed 'route' to 'router'
-            console.log(res.data); // Fixed typo: changed 'res' to 'loginRes'
+            router.push("/loggedIn");
+            console.log(res.data); 
         } catch (err) {
             console.error('Signup failed', err);
         }
     };
+    
 
     return (
         <div className='page'>
@@ -58,8 +60,11 @@ const CreateAccount = () => {
                     <h3>Password</h3>
                     <input type="password" name="password" value={formData.password} onChange={handleChange} />
                     <button className='accountBt' type="submit">Create Account</button>
+                    <h3>Already have an account? <Link href="/signIn">Sign In</Link></h3>
                 </div>
+               
             </form>
+            
         </div>
     );
 };
