@@ -11,7 +11,6 @@ app.use(express.json({ extended: false })); // added this line to fix PUT reques
 app.use('/api/items', items);
 app.use('/api/users', users);
 
-
 const conn_str = 'mongodb+srv://specter:ayIrmSeFOBvimw6f@mongoexample.uij9ngg.mongodb.net/?retryWrites=true&w=majority&appName=MongoExample'
 mongoose.set('strictQuery', false);
 mongoose.connect(conn_str).then(() => {

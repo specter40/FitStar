@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import '../createAccount/css/CreateAccount.css';
+import UserContext from '../context/UserContext';
 
 const CreateAccount = () => {
+    //const { setUserData } = useContext(UserContext);
     // State to manage form inputs
     const [formData, setFormData] = useState({
         username: '',
@@ -19,17 +21,29 @@ const CreateAccount = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try{
-            await axios.post('/api/users', formData);
-            console.log(res.data);
+        try {
+            await axios.post('http://localhost:8085/api/users/signup', formData);
+            console.log("great success!");
+            const loginRes = await axios.post('http://localhost:8085/api/users/login', {
+                email: formData.email,
+                password: formData.password
+            });
+            
+            setUserData({
+                token: loginRes.data.token,
+                user: loginRes.data.user
+            });
+            localStorage.setItem('auth-token', loginRes.data.token);
+            router.push("/loggedIn"); // Fixed typo: changed 'route' to 'router'
+            console.log(res.data); // Fixed typo: changed 'res' to 'loginRes'
         } catch (err) {
-            console.error(err);
+            console.error('Signup failed', err);
         }
     };
 
     return (
         <div className='page'>
-            <form onSubmit={ handleSubmit }>
+            <form onSubmit={handleSubmit}>
                 <div className='starContainer'>
                     <img className="star" src='/images/Star.png' alt="Star" />
                     <h1>Welcome</h1>
@@ -38,11 +52,11 @@ const CreateAccount = () => {
                     <img className="logo" src='/images/Logo.png' alt="Logo" />
                     <h2>Create New Account</h2>
                     <h3>Username</h3>
-                    <input type="text" name="username" value={formData.username} onChange={ handleChange } />
+                    <input type="text" name="username" value={formData.username} onChange={handleChange} />
                     <h3>Email</h3>
-                    <input type="email" name="email" value={formData.email} onChange={ handleChange } />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} />
                     <h3>Password</h3>
-                    <input type="password" name="password" value={formData.password} onChange={ handleChange } />
+                    <input type="password" name="password" value={formData.password} onChange={handleChange} />
                     <button className='accountBt' type="submit">Create Account</button>
                 </div>
             </form>

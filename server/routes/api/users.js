@@ -8,16 +8,16 @@ const User = require('../../model/User');
 //Signup route
 userRouter.post('/signup', async (req, res) => {
     try {
-        const { email, password, confirmPassword, username } = req.body;
-        if (!email || !password || !username || !confirmPassword) {
+        const { email, password, /*confirmPassword,*/ username } = req.body;
+        if (!email || !password || !username /*|| !confirmPassword*/) {
             return res.status(400).json({ msg: 'Please enter all fields' });
         }
         if (password.length < 6) {
             return res.status(400).json({ msg: 'Password must be at least 6 characters' });
         }
-        if (confirmPassword !== password) {
-            return res.status(400).json({ msg: 'Passwords do not match' });
-        }
+        // if (confirmPassword !== password) {
+        //     return res.status(400).json({ msg: 'Passwords do not match' });
+        // }
         const existingUser = await User.findOne({ email});
         if (existingUser) {
             return res.status(400).json({ msg: 'An account with this email already exists' });
@@ -82,3 +82,5 @@ userRouter.post('/tokenIsValid', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
+module.exports = userRouter;

@@ -1,11 +1,11 @@
-import User from '@/server/model/User';
-import { createContent, useState, useEffect } from 'react';
-const UserContext = createContent();
+import { createContext, useState, useEffect } from 'react';
+
+const UserContext = createContext();
 
 export const UserProvider = ({ children }) => { 
     const [userData, setUserData] = useState({
-        loggedIn: false,
-        user: null
+        token: undefined,
+        user: undefined,
     });
     
     useEffect(() => {
