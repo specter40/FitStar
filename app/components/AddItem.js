@@ -101,21 +101,31 @@ const AddItem = () => {
             distanceSwimming: enteredDistanceSwimming
         };
         console.log(itemData);
+        axios 
+            .post('http://localhost:8085/api/items', itemData)
+            .then((res) => {         
+            console.log("Item created successfully.");
+            setEnteredDate('');
+            setEnteredExerciseType('');
+            setEnteredIndoorOutdoor('');
+            setEnteredDistance('');
+            setEnteredCaloriesBurned('');
+            setEnteredBodyTrainType('');
+            setEnteredWeight('');
+            setEnteredReps('');
+            setEnteredSets('');
+            setEnteredDistanceHiking('');
+            setEnteredModerateAdvanced('');
+            setEnteredIndoorOutdoorCycling('');
+            setEnteredDistanceCycling('');
+            setEnteredDistanceSwimming('');
+            
+            router.push("/loggedIn");
 
-        setEnteredDate('');
-        setEnteredExerciseType('');
-        setEnteredIndoorOutdoor('');
-        setEnteredDistance('');
-        setEnteredCaloriesBurned('');
-        setEnteredBodyTrainType('');
-        setEnteredWeight('');
-        setEnteredReps('');
-        setEnteredSets('');
-        setEnteredDistanceHiking('');
-        setEnteredModerateAdvanced('');
-        setEnteredIndoorOutdoorCycling('');
-        setEnteredDistanceCycling('');
-        setEnteredDistanceSwimming('');
+            })
+            .catch((err) => {
+                console.log("Error in creating item." + err);
+            });
     }
 
     const isLoggedIn = true; 

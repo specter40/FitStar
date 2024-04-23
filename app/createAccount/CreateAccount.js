@@ -3,6 +3,8 @@ import axios from 'axios';
 import '../createAccount/css/CreateAccount.css';
 import UserContext from "../context/UserContext";
 import { UserProvider } from '../context/UserContext';
+import UserContext from '../context/UserContext';
+import Link from 'next/link';
 
 const CreateAccount = () => {
     const { setUserData } = useContext(UserContext);
@@ -35,34 +37,34 @@ const CreateAccount = () => {
                 user: loginRes.data.user
             });
             localStorage.setItem('auth-token', loginRes.data.token);
-            router.push("/loggedIn"); // Fixed typo: changed 'route' to 'router'
-            console.log(res.data); // Fixed typo: changed 'res' to 'loginRes'
+            router.push("/loggedIn");
+            console.log(res.data); 
         } catch (err) {
             console.error('Signup failed', err);
         }
     };
+    
 
     return (
         <div className='page'>
             <form onSubmit={handleSubmit}>
-                <UserProvider>
-                    <div className='starContainer'>
-                        <img className="star" src='/images/Star.png' alt="Star" />
-                        <h1>Welcome</h1>
-                    </div>
-                    <div className='bodyContainer'>
-                        <img className="logo" src='/images/Logo.png' alt="Logo" />
-                        <h2>Create New Account</h2>
-                        <h3>Username</h3>
-                        <input type="text" name="username" value={formData.username} onChange={handleChange} />
-                        <h3>Email</h3>
-                        <input type="email" name="email" value={formData.email} onChange={handleChange} />
-                        <h3>Password</h3>
-                        <input type="password" name="password" value={formData.password} onChange={handleChange} />
-                        <button className='accountBt' type="submit">Create Account</button>
-                    </div>
-                </UserProvider>
+                <div className='starContainer'>
+                    <img className="star" src='/images/Star.png' alt="Star" />
+                    <h1>Welcome</h1>
+                </div>
+                <div className='bodyContainer'>
+                    <img className="logo" src='/images/Logo.png' alt="Logo" />
+                    <h2>Create New Account</h2>
+                    <h3>Username</h3>
+                    <input type="text" name="username" value={formData.username} onChange={handleChange} />
+                    <h3>Email</h3>
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                    <h3>Password</h3>
+                    <input type="password" name="password" value={formData.password} onChange={handleChange} />
+                    <button className='accountBt' type="submit">Create Account</button>
+                </div>
             </form>
+            
         </div>
     );
 };
