@@ -1,7 +1,8 @@
 import { useState, useContext } from 'react';
 import axios from 'axios';
 import '../createAccount/css/CreateAccount.css';
-import UserContext from '../context/UserContext';
+import UserContext from "../context/UserContext";
+import { UserProvider } from '../context/UserContext';
 import Link from 'next/link';
 
 const CreateAccount = () => {
@@ -48,26 +49,25 @@ const CreateAccount = () => {
 
     return (
         <div className='page'>
-            <form onSubmit={handleSubmit}>
-                <div className='starContainer'>
-                    <img className="star" src='/images/Star.png' alt="Star" />
-                    <h1>Welcome</h1>
-                </div>
-                <div className='bodyContainer'>
-                    <img className="logo" src='/images/Logo.png' alt="Logo" />
-                    <h2>Create New Account</h2>
-                    <h3>Username</h3>
-                    <input type="text" name="username" value={formData.username} onChange={handleChange} />
-                    <h3>Email</h3>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} />
-                    <h3>Password</h3>
-                    <input type="password" name="password" value={formData.password} onChange={handleChange} />
-                    <button className='accountBt' type="submit">Create Account</button>
-                    <h3>Already have an account? <Link href="/signIn">Sign In</Link></h3>
-                </div>
-               
-            </form>
-            
+            <UserProvider>
+                <form onSubmit={handleSubmit}>
+                    <div className='starContainer'>
+                        <img className="star" src='/images/Star.png' alt="Star" />
+                        <h1>Welcome</h1>
+                    </div>
+                    <div className='bodyContainer'>
+                        <img className="logo" src='/images/Logo.png' alt="Logo" />
+                        <h2>Create New Account</h2>
+                        <h3>Username</h3>
+                        <input type="text" name="username" value={formData.username} onChange={handleChange} />
+                        <h3>Email</h3>
+                        <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                        <h3>Password</h3>
+                        <input type="password" name="password" value={formData.password} onChange={handleChange} />
+                        <button className='accountBt' type="submit">Create Account</button>
+                    </div>
+                </form>
+            </UserProvider>
         </div>
     );
 };
