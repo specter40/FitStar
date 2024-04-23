@@ -5,7 +5,7 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => { 
     const [userData, setUserData] = useState({
         token: undefined,
-        user: undefined,
+        user: undefined
     });
     
     useEffect(() => {

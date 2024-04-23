@@ -5,7 +5,7 @@ import UserContext from '../context/UserContext';
 import Link from 'next/link';
 
 const CreateAccount = () => {
-    //const { setUserData } = useContext(UserContext);
+    const setUserData = useContext(UserContext);
     // State to manage form inputs
     const [formData, setFormData] = useState({
         username: '',
@@ -25,20 +25,23 @@ const CreateAccount = () => {
         try {
             await axios.post('http://localhost:8085/api/users/signup', formData);
             console.log("great success!");
+            console.log(formData);
             const loginRes = await axios.post('http://localhost:8085/api/users/login', {
                 email: formData.email,
                 password: formData.password
             });
-            
+            console.log("Login");
+            console.log(loginRes.data);
             setUserData({
                 token: loginRes.data.token,
                 user: loginRes.data.user
             });
+            console.log("setUserData Works!");
             localStorage.setItem('auth-token', loginRes.data.token);
             router.push("/loggedIn");
             console.log(res.data); 
         } catch (err) {
-            console.error('Signup failed', err);
+            console.error('Signup failed', err.response.data);
         }
     };
     

@@ -1,19 +1,19 @@
 import {useState, useContext, useEffect} from "react";
-import UserContext from "../context/UserContext";
+import UserContext from "../context/UserContext.js";
 import { useRouter } from 'next/navigation';
 import '../signIn/css/SignIn.css';
 import axios from 'axios';
 
 const SignIn = () => {
     const router = useRouter();
-    // const {userData, setUserData} = useContext(UserContext);
+    const {userData, setUserData} = useContext(UserContext);
 
-    // //Redirect if user is already logged in
-    // useEffect(() => {
-    //     if (userData.token) {
-    //         router.push("/loggedIn");
-    //     }
-    // }, [userData.token, router]);
+    //Redirect if user is already logged in
+    useEffect(() => {
+        if (userData.token) {
+            router.push("/loggedIn");
+        }
+    }, [userData.token, router]);
 
     const  [formData, setFormData] = useState({
         email: '',
@@ -35,7 +35,7 @@ const SignIn = () => {
         e.preventDefault();
         try {
            //Send login request to server
-           const response = await axios.port("http://localhost:8085/api/users/login", formData);
+           const response = await axios.post("http://localhost:8085/api/users/login", formData);
            setUserData({
                 token: response.data.token,
                 user: response.data.user,
