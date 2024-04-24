@@ -1,4 +1,5 @@
 'use client';
+import axios from 'axios';
 
 // source imports
 import React from 'react';
@@ -11,18 +12,19 @@ const AddItem = () => {
 
     const [enteredDate, setEnteredDate] = React.useState('');
     const [enteredExerciseType, setEnteredExerciseType] = React.useState('');
-    const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
-    const [enteredDistance, setEnteredDistance] = React.useState('');
+    //const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
+    //const [enteredDistance, setEnteredDistance] = React.useState('');
     const [enteredCaloriesBurned, setEnteredCaloriesBurned] = React.useState('');
-    const [enteredBodyTrainType, setEnteredBodyTrainType] = React.useState('');
-    const [enteredWeight, setEnteredWeight] = React.useState('');
-    const [enteredReps, setEnteredReps] = React.useState('');
-    const [enteredSets, setEnteredSets] = React.useState('');
-    const [enteredDistanceHiking, setEnteredDistanceHiking] = React.useState('');
-    const [enteredModerateAdvanced, setEnteredModerateAdvanced] = React.useState('');
-    const [enteredIndoorOutdoorCycling, setEnteredIndoorOutdoorCycling] = React.useState('');
-    const [enteredDistanceCycling, setEnteredDistanceCycling] = React.useState('');
-    const [enteredDistanceSwimming, setEnteredDistanceSwimming] = React.useState('');
+    //const [enteredBodyTrainType, setEnteredBodyTrainType] = React.useState('');
+    //const [enteredWeight, setEnteredWeight] = React.useState('');
+    //const [enteredReps, setEnteredReps] = React.useState('');
+    //const [enteredSets, setEnteredSets] = React.useState('');
+    //const [enteredDistanceHiking, setEnteredDistanceHiking] = React.useState('');
+    //const [enteredModerateAdvanced, setEnteredModerateAdvanced] = React.useState('');
+    //const [enteredIndoorOutdoorCycling, setEnteredIndoorOutdoorCycling] = React.useState('');
+    //const [enteredDistanceCycling, setEnteredDistanceCycling] = React.useState('');
+    //const [enteredDistanceSwimming, setEnteredDistanceSwimming] = React.useState('');
+    const[enteredHeartRate, setHeartRate] = React.useState('');
 
     const dateHandler = (event) => {
         setEnteredDate(event.target.value);
@@ -32,7 +34,7 @@ const AddItem = () => {
         const selectedOptions = Array.from(event.target.selectedOptions, option => option.value);
         setEnteredExerciseType(selectedOptions);
     };
-
+    /*
     const indoorOutdoorHandler = (event) => {
         setEnteredIndoorOutdoor(event.target.value);
     };
@@ -40,11 +42,11 @@ const AddItem = () => {
     const distanceHandler = (event) => {
         setEnteredDistance(event.target.value);
     };
-
+    */
     const caloriesHandler = (event) => {
         setEnteredCaloriesBurned(event.target.value);
     };
-
+    /*
     const bodyTrainHandler = (event) => {
         const selectedOptions = Array.from(event.target.selectedOptions, option => option.value);
         setEnteredBodyTrainType(selectedOptions);
@@ -81,24 +83,30 @@ const AddItem = () => {
     const distanceSwimmingHandler = (event) => {
         setEnteredDistanceSwimming(event.target.value);
     };
+    */
+    const heartRateHandler = (event) => {
+        setHeartRate(event.target.value);
+    };
 
     const addItemHandler = (event) =>{
         event.preventDefault();
+        console.log("Add item button clicked");
         const itemData = {
             date: enteredDate,
             exerciseType: enteredExerciseType,
-            indoorOutdoor: enteredIndoorOutdoor,
-            distance: enteredDistance,
+            //indoorOutdoor: enteredIndoorOutdoor,
+            //distance: enteredDistance,
             caloriesBurned: enteredCaloriesBurned,
-            bodyTrainType: enteredBodyTrainType,
-            weight: enteredWeight,
-            reps: enteredReps,
-            sets: enteredSets,
-            distanceHiking: enteredDistanceHiking,
-            moderateAdvanced: enteredModerateAdvanced,
-            indoorOutdoorCycling: enteredIndoorOutdoorCycling,
-            distanceCycling: enteredDistanceCycling,
-            distanceSwimming: enteredDistanceSwimming
+            //bodyTrainType: enteredBodyTrainType,
+            //weight: enteredWeight,
+            //reps: enteredReps,
+            //sets: enteredSets,
+            //distanceHiking: enteredDistanceHiking,
+            //moderateAdvanced: enteredModerateAdvanced,
+            //indoorOutdoorCycling: enteredIndoorOutdoorCycling,
+            //distanceCycling: enteredDistanceCycling,
+            //distanceSwimming: enteredDistanceSwimming,
+            heartRate: enteredHeartRate
         };
         console.log(itemData);
         axios 
@@ -107,9 +115,10 @@ const AddItem = () => {
             console.log("Item created successfully.");
             setEnteredDate('');
             setEnteredExerciseType('');
-            setEnteredIndoorOutdoor('');
-            setEnteredDistance('');
+            //setEnteredIndoorOutdoor('');
+            //setEnteredDistance('');
             setEnteredCaloriesBurned('');
+            /*
             setEnteredBodyTrainType('');
             setEnteredWeight('');
             setEnteredReps('');
@@ -119,6 +128,8 @@ const AddItem = () => {
             setEnteredIndoorOutdoorCycling('');
             setEnteredDistanceCycling('');
             setEnteredDistanceSwimming('');
+            */
+            setHeartRate('');
             
             router.push("/loggedIn");
 
@@ -144,6 +155,22 @@ const AddItem = () => {
                     <br />
                 </div>
 
+                <div>
+                    <div class = "chunk">
+                        <label for = "heart_rate"> Heart Rate: </label>
+                        <br />
+                            <input id="heart_rate"
+                                type="number"
+                                value={enteredHeartRate}
+                                onChange={heartRateHandler} 
+                            />
+                            <span> bpm</span>
+
+                            <br />
+                    </div>
+                </div>
+
+                
                 <div id="column_container">
                     <div class="column">
                         <div class="chunk">
@@ -167,7 +194,7 @@ const AddItem = () => {
                             <br />
                         </div>
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="indoor_outdoor">Indoor or Outdoor Run, Walk, or Jog?</label>
                             <br />
                             <select id="indoor_outdoor"
@@ -179,9 +206,9 @@ const AddItem = () => {
                             </select>
 
                             <br />
-                        </div>
+                        </div> */}
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="distance">Distance for Run, Walk, or Jog?</label>
                             <br />
                             <input id="distance"
@@ -192,7 +219,7 @@ const AddItem = () => {
                             <span> mi</span>
 
                             <br />
-                        </div>
+                        </div> */}
                     
 
                         <div class="chunk">
@@ -210,12 +237,12 @@ const AddItem = () => {
                         
                     </div>
 
-                    <div class="column">
+                    {/* <div class="column">
 
                         <div class="chunk">
                             <label for="body_train_type">Which part of your body did you train?</label>
                             <select multiple id="body_train_type"
-                                value={enteredBodyTrainType}
+                                value={enteredBodyTrainType} 
                                 onChange={bodyTrainHandler}
                             >
                                     <option>Legs - Quads</option>
@@ -232,9 +259,9 @@ const AddItem = () => {
                             <br />
                         </div>
 
-                    </div>
+                    </div> */}
 
-                    <div class="column">
+                    {/* <div class="column">
                 
                         <div class="chunk">
                             <label for="weight">Weight Used:</label>
@@ -247,9 +274,9 @@ const AddItem = () => {
                             <span> lbs</span>
 
                             <br />
-                        </div>
+                        </div> */}
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="reps_and_sets">How many sets and reps did you do?</label>
                             <br />
                             <input id="sets"
@@ -266,9 +293,9 @@ const AddItem = () => {
                             <span> reps</span>
 
                             <br />
-                        </div>
+                        </div> */}
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="distance_hiking">Distance for hiking</label>
                             <br />
                             <input id="distance_hiking"
@@ -283,9 +310,9 @@ const AddItem = () => {
 
                     </div>
 
-                    <div class="column">
+                    <div class="column"> */}
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="moderate_advanced">Moderate or Advanced hiking?</label>
                             <br />
                             <select id="moderate_advanced"
@@ -297,9 +324,9 @@ const AddItem = () => {
                             </select>
 
                             <br />
-                        </div>
+                        </div> */}
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="indoor_outdoor_cycling">Indoor or Outdoor Cycling?</label>
                             <br />
                             <select id="indoor_outdoor_cycling"
@@ -311,9 +338,9 @@ const AddItem = () => {
                             </select>
 
                             <br />
-                        </div>
+                        </div> */}
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="distance_cycling">Distance Cycling?</label>
                             <br />
                             <input id="distance_cycling"
@@ -324,9 +351,9 @@ const AddItem = () => {
                             <span> mi</span>
 
                             <br />
-                        </div>
+                        </div> */}
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="distance_swimming">Distance Cycling?</label>
                             <br />
                             <input id="distance_swimming"
@@ -337,14 +364,15 @@ const AddItem = () => {
                             <span> mi</span>
 
                             <br />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
-        
-                <button id="add_info" onClick={addItemHandler}>Add to Activity</button>
+                <form onSubmit={addItemHandler}>
+                    <button id="add_info" type="button" onClick={addItemHandler}>Add to Activity</button>
+                </form>
             </div>
         </div>
-        </div>
+        // </div>
     );
 
 };
