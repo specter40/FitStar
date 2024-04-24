@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import '../css/Item.css';
  
@@ -27,9 +29,15 @@ const Item = (props) => {
         else if (props.activity === "Kickboxing") {
             return <img className="images" src='/images/kickboxing.webp' alt="Kickboxing" />
         }
+    };
+
+    const clickHandler = () => {
+        router.push();
+        console.log('div clicked');
     }
+
     return (
-        <div className='item'>
+        <div className='item' onClick={clickHandler}>
             {images()}
             <h3 id='day'>{props.day}</h3>
             

@@ -15,6 +15,9 @@
     font-family: 'Inika';
     padding: 30px;
 }
+.item:hover {
+    background: #b6b5b5;
+}
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr ;

@@ -6,7 +6,7 @@ import { UserProvider } from '../context/UserContext';
 import Link from 'next/link';
 
 const CreateAccount = () => {
-    const { setUserData } = useContext(UserContext);
+    //const { setUserData } = useContext(UserContext);
     // State to manage form inputs
     const [formData, setFormData] = useState({
         username: '',
