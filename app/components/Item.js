@@ -2,10 +2,13 @@
 
 import React from 'react';
 import '../css/Item.css';
+import {useRouter} from 'next/navigation';
  
 
 
 const Item = (props) => {   
+
+    const router = useRouter();
 
     const images = () => {
         if (props.activity === "Running") {
@@ -32,7 +35,7 @@ const Item = (props) => {
     };
 
     const clickHandler = () => {
-        router.push();
+        router.push('/editDeleteActivity');
         console.log('div clicked');
     }
 
