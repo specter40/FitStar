@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 
 const ItemSchema = new mongoose.Schema({
-    title: {
+    exerciseType: {
         type: String,
         required: true
     },
-    description: {
-        type: String
+    caloriesBurned: {
+        type: Number
     },
-    image: {
-        type: String
+    heartRate: {
+        type: Number
     },
-    update_date: {    
+    date: {    
         type: Date,
-        default: Date.now,
+        // default: Date.now,
     
     }
 });
