@@ -3,6 +3,7 @@ import UserContext from "../context/UserContext.js";
 import { useRouter } from 'next/navigation';
 import '../signIn/css/SignIn.css';
 import axios from 'axios';
+import Link from "next/link";
 
 const SignIn = () => {
     const router = useRouter();
@@ -50,19 +51,23 @@ const SignIn = () => {
 
     return (
         <div className="page">
-        <div className="container">
-            <img src="/images/Star.png" id="star"/>
-            <h1>Welcome</h1>
-            <img className="logo" src='/images/Frame.png' id="titleLogo"alt="Logo" />
-            <h2>Login</h2>
-            <h3>Email</h3>
-            <input name='email' type= 'email' value={formData.email} onChange={handleChange} />
-            <h3>Password</h3>
-            <input name='password' type="password" value={formData.password} onChange= {handleChange}/>
-            <button onClick={handleLogin}>Login</button>
-            <a id="createAccount" onClick={createHandler}>Create a new account</a>
+            <form onSubmit={handleLogin}>
+                <div className="starContainer">
+                    <img className="star" src="images/Star.png" alt="Star" />
+                    <h1>Welcome</h1>
+                </div>
+                <div className="bodyContainer">
+                    <img className="logo" src="/images/Logo.png" alt="Logo" />
+                    <h2>Login</h2>
+                    <h3>Email</h3>
+                    <input name="email" type="email" value={formData.email} onChange={handleChange} />
+                    <h3>Password</h3>
+                    <input name="password" type="password" value={formData.password} onChange={handleChange} />
+                    <button className="submitBt" type="submit">Login</button>
+                    <h3>Don't have an account? <Link href="/createAccount">Create Account</Link></h3>
+                </div>
+            </form>
         </div>
-    </div>
     );
 };
 

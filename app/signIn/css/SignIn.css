@@ -2,51 +2,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
 
 .page {
-    background: #D6D1D1;
-    margin: 0;
-    padding: 200px;
+    background-image: url('/images/Background.jpg');
+    margin: 0px;
+    padding: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.container {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center;
-    flex-shrink: 0;
-    justify-content: center;
+.starContainer {
     position: relative;
-    bottom: 100px;
-    border-radius: 69px;
-    background: rgba(106, 159, 165, 0.50);
-    margin: 0;
-    padding: 100px;
+    overflow: hidden;
+}
+
+.starContainer h1 {
+    transform: translate(-50%, -50%) rotate(90deg);
     font-family: 'Inika';
+    color: #616161;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #616161;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    font-size: 70px;
 }
 
-#star{
-    position: absolute; 
-    top: 70px; 
-    left: 0; 
-    transform: translate(-50%, -50%);
+h2 {
+    font-family: 'Inika';
+    color: #616161;
+    text-align: center;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #616161;
+    font-style: normal;
+    font-size: 40px;
+    margin: 0px;
+    font-weight: 2;
 }
 
-.logo{
-    width: 100px;
-    position: relative;
-    left:auto;
-    border-radius: 20%;
+h3 {
+    font-family: 'Inika';
+    color: #616161;
 }
 
-#createAccount {
-    text-decoration: none;
-    color: #7F94B4;
-    margin: 0;
+.bodyContainer {
+    margin: auto;
 }
 
-#createAccount:hover{
-    background-color: rgb(99, 103, 103);
-    border: none;
-    border-radius: 20px;
+form {
+    background-color: #a1bfc3f1;
+    border-radius: 69px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.logo {
+    border-radius: 40%;
+    width: 150px;
+}
+
+.star {
+    width: 900px;
+    transform: translate(-45%, -10%);
+}
+
+input {
     padding: 5px;
-    color: white;
+}
+
+.submitBt {
+    margin:auto;
+    margin-top: 30px;
+}
+
+.submitBt:hover {
+    margin: auto;
+    margin-top: 30px;
 }
