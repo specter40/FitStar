@@ -37,13 +37,13 @@
     border-radius: 20%;
 }
 
-a {
+#createAccount {
     text-decoration: none;
     color: #7F94B4;
     margin: 0;
 }
 
-a:hover{
+#createAccount:hover{
     background-color: rgb(99, 103, 103);
     border: none;
     border-radius: 20px;

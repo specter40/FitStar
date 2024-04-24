@@ -60,7 +60,7 @@ const SignIn = () => {
             <h3>Password</h3>
             <input name='password' type="password" value={formData.password} onChange= {handleChange}/>
             <button onClick={handleLogin}>Login</button>
-            <a onClick={createHandler}>Create a new account</a>
+            <a id="createAccount" onClick={createHandler}>Create a new account</a>
         </div>
     </div>
     );
