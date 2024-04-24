@@ -1,13 +1,17 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, createContext} from 'react';
 import axios from 'axios';
 import '../createAccount/css/CreateAccount.css';
 import UserContext from "../context/UserContext";
 import { UserProvider } from '../context/UserContext';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+
 
 const CreateAccount = () => {
+    const router = useRouter();
     // BRACKETS TAKEN OFF
-    const setUserData = useContext(UserContext);
+    const {userData, setUserData} = useContext(UserContext);
     // State to manage form inputs
     const [formData, setFormData] = useState({
         username: '',
@@ -28,20 +32,28 @@ const CreateAccount = () => {
             await axios.post('http://localhost:8085/api/users/signup', formData);
             console.log("great success!");
             console.log(formData);
-            const loginRes = await axios.post('http://localhost:8085/api/users/login', {
+            await axios.post('http://localhost:8085/api/users/login', {
                 email: formData.email,
                 password: formData.password
-            });
+            }).then((loginRes) => {
             console.log("Login");
             console.log(loginRes.data);
+            const token1 =loginRes.data.token
+            const user1 = loginRes.data.user
+            console.log(token1);
+            console.log(user1);
+            console.log(userData);
+            console.log(typeof setUserData === 'function')
             setUserData({
-                token: loginRes.data.token,
-                user: loginRes.data.user
+                token: token1,
+                user: user1
             });
+            
             console.log("setUserData Works!");
-            localStorage.setItem('auth-token', loginRes.data.token);
+            localStorage.setItem('auth-token', token1);
+            console.log("Token Set!");
+        });
             router.push("/loggedIn");
-            console.log(res.data); 
         } catch (err) {
             console.error('Signup failed', err.response.data);
         }
@@ -66,7 +78,9 @@ const CreateAccount = () => {
                         <h3>Password</h3>
                         <input type="password" name="password" value={formData.password} onChange={handleChange} />
                         <button className='accountBt' type="submit">Create Account</button>
+                        <h3>Already have an account? <Link href="/signIn">Sign In</Link></h3>
                     </div>
+                    
                 </form>
             </UserProvider>
         </div>

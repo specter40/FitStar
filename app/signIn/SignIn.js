@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const SignIn = () => {
     const router = useRouter();
-    const {userData, setUserData} = useContext(UserContext);
+    const {userData: userData, setUserData:setUserData} = useContext(UserContext) || {};
 
     //Redirect if user is already logged in
     useEffect(() => {
