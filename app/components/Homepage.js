@@ -9,7 +9,7 @@ const Homepage = () => {
            </div>
 
             <h2>Fitness Tracker For Achiteving Your Goals!</h2>
-            <a href='/demo'><button id="start">Click Here To Start</button></a>
+            <a href='/signIn'><button id="start">Click Here To Start</button></a>
         </div>
     );
 }

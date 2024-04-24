@@ -6,7 +6,7 @@ import AddItem from "./components/AddItem";
 export default function Home() {
   return (
     <div>
-      <Header loggedIn = {false}/>
+      <Header />
       <Homepage />
     </div>
   );
