@@ -6,7 +6,7 @@ import EditDeleteItem from "../components/EditDeleteItem";
 export default function Home() {
     return (
         <div>
-            <Header loggedIn={true}/>
+            <Header/>
             <EditDeleteItem />
         </div>
     );

@@ -7,7 +7,7 @@ import axios from 'axios';
 export default function Home() {
     return (
         <div>
-            <Header loggedIn={false} />
+            <Header />
             <CreateAccount />
         </div>
     );

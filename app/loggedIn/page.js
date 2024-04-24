@@ -5,7 +5,7 @@ import LoggedPage from "../loggedIn/LoggedPage";
 export default function Home() {
     return (
         <div>
-            <Header loggedIn={true}/>
+            <Header />
             <LoggedPage />
         </div>
     );

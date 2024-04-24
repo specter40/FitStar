@@ -6,7 +6,7 @@ import SignIn from "./SignIn";
 export default function Home() {
     return (
         <div>
-            <Header loggedIn={false} />
+            <Header />
             <SignIn />
         </div>
     );
