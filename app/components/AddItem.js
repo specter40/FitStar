@@ -24,7 +24,8 @@ const AddItem = () => {
     //const [enteredIndoorOutdoorCycling, setEnteredIndoorOutdoorCycling] = React.useState('');
     //const [enteredDistanceCycling, setEnteredDistanceCycling] = React.useState('');
     //const [enteredDistanceSwimming, setEnteredDistanceSwimming] = React.useState('');
-    const[enteredHeartRate, setHeartRate] = React.useState('');
+    const [enteredHeartRate, setHeartRate] = React.useState('');
+    const [enteredExerciseDuration, setExerciseDuration] = React.useState('');
 
     const dateHandler = (event) => {
         setEnteredDate(event.target.value);
@@ -87,6 +88,9 @@ const AddItem = () => {
     const heartRateHandler = (event) => {
         setHeartRate(event.target.value);
     };
+    const exerciseDurationHandler = (event) => {
+        setExerciseDuration(event.target.value);
+    }
 
     const addItemHandler = (event) =>{
         event.preventDefault();
@@ -106,7 +110,8 @@ const AddItem = () => {
             //indoorOutdoorCycling: enteredIndoorOutdoorCycling,
             //distanceCycling: enteredDistanceCycling,
             //distanceSwimming: enteredDistanceSwimming,
-            heartRate: enteredHeartRate
+            heartRate: enteredHeartRate,
+            exerciseDuration: enteredExerciseDuration
         };
         console.log(itemData);
         axios 
@@ -231,6 +236,19 @@ const AddItem = () => {
                                 onChange={caloriesHandler}
                             />
                             <span> calories</span>
+
+                            <br />
+                        </div>
+
+                        <div class="chunk">
+                            <label for="exercise_duration">Exercise duration:</label>
+                            <br />
+                            <input id="exercise_duration"
+                                type="number"
+                                value={enteredExerciseDuration}
+                                onChange={exerciseDurationHandler}
+                            />
+                            <span> minutes</span>
 
                             <br />
                         </div>

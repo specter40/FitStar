@@ -13,7 +13,7 @@ const LoggedPage = (props) => {
     useEffect (() => {
         axios.get('http://localhost:8085/api/items') 
         .then(res => {
-            console.log(res.data);
+            //console.log(res.data);
             setItems(res.data);
         })
         .catch(err => {

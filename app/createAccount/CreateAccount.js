@@ -55,7 +55,7 @@ const CreateAccount = () => {
         });
             router.push("/loggedIn");
         } catch (err) {
-            console.error('Signup failed', err.response.data);
+            console.error('Signup failed', err.response);
         }
     };
     
