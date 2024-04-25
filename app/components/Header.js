@@ -43,7 +43,7 @@ const Header = () => {
                 <button on onClick={homeHandler}>Home</button>
                 <button onClick={checkActivityHandler}>Check Activity</button>
                 <button on onClick={demoHandler}>Demo</button>
-                {userData.user ? (<button onClick={handleLogout}>Logout</button> ):( <button onClick={loginHandler}>Login/Create Account</button>)}
+                <div>{userData.token ? (<button onClick={handleLogout}>Logout</button> ):( <button onClick={loginHandler}>Login/Create Account</button>)}</div>
                 {/* <button onClick={logHandler}>{statusLog}</button> */}
             </div>
        </header>

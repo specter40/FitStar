@@ -1,9 +1,12 @@
+"use client"
 import "./css/DemoPage.css";
 import React from "react";
 import Card from "../components/Card.js";
 import ItemList from "../components/ItemList.js";
+import { useRouter } from "next/navigation";
 
 const DemoPage = (props) => {
+    const router = useRouter();
     const items = [
         {   day: "Saturday",
             activity: "Cycling",
@@ -48,7 +51,7 @@ const DemoPage = (props) => {
             <div className="container">
                 <h1>Demo</h1>
                 <div className="demo">
-                    <h2>Recent Activity</h2>
+                    <div><h2>Recent Activity</h2><button onClick={() => router.push('/add-activity')}>Add Activity</button> </div>
                     <div>
                         <ItemList listItems={items} />
                     </div>

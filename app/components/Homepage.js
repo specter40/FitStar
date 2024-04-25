@@ -1,6 +1,22 @@
+"use client";
 import React from 'react';
 import '../css/Homepage.css';
+import UserContext from '../context/UserContext';
+import { useContext } from 'react';
+import {useRouter} from 'next/navigation';
 const Homepage = () => {
+    const router = useRouter();
+    const {userData, setUserData} = useContext(UserContext);
+    const startHandler = () => {
+        // localStorage.removeItem("auth-token");
+        // setUserData({token: undefined, user: undefined});
+        if (userData.user) {
+            router.push("/loggedIn");
+        } else {
+            router.push("/createAccount");
+        }
+        
+    }
     return (
         <div className='page'>
             <div className='title'>  
@@ -9,7 +25,7 @@ const Homepage = () => {
            </div>
 
             <h2>Fitness Tracker For Achiteving Your Goals!</h2>
-            <a href='/signIn'><button id="start">Click Here To Start</button></a>
+            <button id="start" onClick={startHandler}>Click Here To Start</button>
         </div>
     );
 }
