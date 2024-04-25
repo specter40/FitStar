@@ -17,7 +17,7 @@ const Header = () => {
     }
 
     const loginHandler = () => {
-        router.push("/createAccount")
+        router.push("/signIn")
     }
    const demoHandler = () => {
        router.push("/demo")
