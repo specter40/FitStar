@@ -3,28 +3,33 @@ import "./css/LoggedPage.css";
 import React from "react";
 import ItemList from "../components/ItemList.js";
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import UserContext from '../context/UserContext';
 import axios from 'axios';
 
 
 const LoggedPage = (props) => {
    const [items, setItems] = React.useState([]);
+   const { userData } = useContext(UserContext);
 
     const router = useRouter()
     useEffect (() => {
-        axios.get('http://localhost:8085/api/items')
-        .then(res => {
-            //console.log(res.data);
-            setItems(res.data);
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    });
+        const fetchItems = async () => {
+            try {
+                const res = await axios.get('http://localhost:8085/api/items', {
+                    headers: { "x-auth-token": userData.token }
+                });
+                setItems(res.data);
+            } catch (error) {
+                console.error("Error fetching items: ", error);
+            }
+        };
+        fetchItems();
+    }, [userData.token]);
     
     return (
         <div className="background">
-            <h1>Hello User!</h1>
+            <h1>Hello {userData.user ? userData.user.username : 'User'}!</h1>
             <div className="demo">
                 <div id="toplevel"><h2>Recent Activity</h2><button onClick={() => router.push('/add-activity')}>Add Activity</button> </div>
                 <div>
