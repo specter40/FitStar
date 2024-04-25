@@ -11,18 +11,19 @@ const EditDeleteItem = () => {
 
     const [enteredDate, setEnteredDate] = React.useState('');
     const [enteredExerciseType, setEnteredExerciseType] = React.useState('');
-    const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
-    const [enteredDistance, setEnteredDistance] = React.useState('');
+    //const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
+    //const [enteredDistance, setEnteredDistance] = React.useState('');
     const [enteredCaloriesBurned, setEnteredCaloriesBurned] = React.useState('');
-    const [enteredBodyTrainType, setEnteredBodyTrainType] = React.useState('');
-    const [enteredWeight, setEnteredWeight] = React.useState('');
-    const [enteredReps, setEnteredReps] = React.useState('');
-    const [enteredSets, setEnteredSets] = React.useState('');
-    const [enteredDistanceHiking, setEnteredDistanceHiking] = React.useState('');
-    const [enteredModerateAdvanced, setEnteredModerateAdvanced] = React.useState('');
-    const [enteredIndoorOutdoorCycling, setEnteredIndoorOutdoorCycling] = React.useState('');
-    const [enteredDistanceCycling, setEnteredDistanceCycling] = React.useState('');
-    const [enteredDistanceSwimming, setEnteredDistanceSwimming] = React.useState('');
+    //const [enteredBodyTrainType, setEnteredBodyTrainType] = React.useState('');
+    //const [enteredWeight, setEnteredWeight] = React.useState('');
+    //const [enteredReps, setEnteredReps] = React.useState('');
+    //const [enteredSets, setEnteredSets] = React.useState('');
+    //const [enteredDistanceHiking, setEnteredDistanceHiking] = React.useState('');
+    //const [enteredModerateAdvanced, setEnteredModerateAdvanced] = React.useState('');
+    //const [enteredIndoorOutdoorCycling, setEnteredIndoorOutdoorCycling] = React.useState('');
+    //const [enteredDistanceCycling, setEnteredDistanceCycling] = React.useState('');
+    //const [enteredDistanceSwimming, setEnteredDistanceSwimming] = React.useState('');
+    const[enteredHeartRate, setHeartRate] = React.useState('');
 
     const dateHandler = (event) => {
         setEnteredDate(event.target.value);
@@ -33,53 +34,56 @@ const EditDeleteItem = () => {
         setEnteredExerciseType(selectedOptions);
     };
 
-    const indoorOutdoorHandler = (event) => {
-        setEnteredIndoorOutdoor(event.target.value);
-    };
+    // const indoorOutdoorHandler = (event) => {
+    //     setEnteredIndoorOutdoor(event.target.value);
+    // };
 
-    const distanceHandler = (event) => {
-        setEnteredDistance(event.target.value);
-    };
+    // const distanceHandler = (event) => {
+    //     setEnteredDistance(event.target.value);
+    // };
 
     const caloriesHandler = (event) => {
         setEnteredCaloriesBurned(event.target.value);
     };
 
-    const bodyTrainHandler = (event) => {
-        const selectedOptions = Array.from(event.target.selectedOptions, option => option.value);
-        setEnteredBodyTrainType(selectedOptions);
-    };
+    // const bodyTrainHandler = (event) => {
+    //     const selectedOptions = Array.from(event.target.selectedOptions, option => option.value);
+    //     setEnteredBodyTrainType(selectedOptions);
+    // };
 
-    const weightHandler = (event) => {
-        setEnteredWeight(event.target.value);
-    };
+    // const weightHandler = (event) => {
+    //     setEnteredWeight(event.target.value);
+    // };
 
-    const repsHandler = (event) => {
-        setEnteredReps(event.target.value);
-    };
+    // const repsHandler = (event) => {
+    //     setEnteredReps(event.target.value);
+    // };
 
-    const setsHandler = (event) => {
-        setEnteredSets(event.target.value);
-    };
+    // const setsHandler = (event) => {
+    //     setEnteredSets(event.target.value);
+    // };
 
-    const distanceHikingHandler = (event) => {
-        setEnteredDistanceHiking(event.target.value);
-    };
+    // const distanceHikingHandler = (event) => {
+    //     setEnteredDistanceHiking(event.target.value);
+    // };
 
-    const moderateAdvancedHandler = (event) => {
-        setEnteredModerateAdvanced(event.target.value);
-    };
+    // const moderateAdvancedHandler = (event) => {
+    //     setEnteredModerateAdvanced(event.target.value);
+    // };
 
-    const indoorOutdoorCyclingHandler = (event) => {
-        setEnteredIndoorOutdoorCycling(event.target.value);
-    };
+    // const indoorOutdoorCyclingHandler = (event) => {
+    //     setEnteredIndoorOutdoorCycling(event.target.value);
+    // };
 
-    const distanceCyclingHandler = (event) => {
-        setEnteredDistanceCycling(event.target.value);
-    };
+    // const distanceCyclingHandler = (event) => {
+    //     setEnteredDistanceCycling(event.target.value);
+    // };
 
-    const distanceSwimmingHandler = (event) => {
-        setEnteredDistanceSwimming(event.target.value);
+    // const distanceSwimmingHandler = (event) => {
+    //     setEnteredDistanceSwimming(event.target.value);
+    // };
+    const heartRateHandler = (event) => {
+        setHeartRate(event.target.value);
     };
 
     const updateItemHandler = (event) =>{
@@ -87,18 +91,19 @@ const EditDeleteItem = () => {
         const itemData = {
             date: enteredDate,
             exerciseType: enteredExerciseType,
-            indoorOutdoor: enteredIndoorOutdoor,
-            distance: enteredDistance,
+            //indoorOutdoor: enteredIndoorOutdoor,
+            //distance: enteredDistance,
             caloriesBurned: enteredCaloriesBurned,
-            bodyTrainType: enteredBodyTrainType,
-            weight: enteredWeight,
-            reps: enteredReps,
-            sets: enteredSets,
-            distanceHiking: enteredDistanceHiking,
-            moderateAdvanced: enteredModerateAdvanced,
-            indoorOutdoorCycling: enteredIndoorOutdoorCycling,
-            distanceCycling: enteredDistanceCycling,
-            distanceSwimming: enteredDistanceSwimming
+            //bodyTrainType: enteredBodyTrainType,
+            //weight: enteredWeight,
+            //reps: enteredReps,
+            // sets: enteredSets,
+            // distanceHiking: enteredDistanceHiking,
+            // moderateAdvanced: enteredModerateAdvanced,
+            // indoorOutdoorCycling: enteredIndoorOutdoorCycling,
+            // distanceCycling: enteredDistanceCycling,
+            // distanceSwimming: enteredDistanceSwimming
+            heartRate: enteredHeartRate
         };
         console.log(itemData);
         axios 
@@ -107,18 +112,19 @@ const EditDeleteItem = () => {
             console.log("Item created successfully.");
             setEnteredDate('');
             setEnteredExerciseType('');
-            setEnteredIndoorOutdoor('');
-            setEnteredDistance('');
+            // setEnteredIndoorOutdoor('');
+            // setEnteredDistance('');
             setEnteredCaloriesBurned('');
-            setEnteredBodyTrainType('');
-            setEnteredWeight('');
-            setEnteredReps('');
-            setEnteredSets('');
-            setEnteredDistanceHiking('');
-            setEnteredModerateAdvanced('');
-            setEnteredIndoorOutdoorCycling('');
-            setEnteredDistanceCycling('');
-            setEnteredDistanceSwimming('');
+            // setEnteredBodyTrainType('');
+            // setEnteredWeight('');
+            // setEnteredReps('');
+            // setEnteredSets('');
+            // setEnteredDistanceHiking('');
+            // setEnteredModerateAdvanced('');
+            // setEnteredIndoorOutdoorCycling('');
+            // setEnteredDistanceCycling('');
+            // setEnteredDistanceSwimming('');
+            setHeartRate('');
             
             router.push("/loggedIn");
 
@@ -137,9 +143,10 @@ const EditDeleteItem = () => {
             console.log("Item created successfully.");
             setEnteredDate('');
             setEnteredExerciseType('');
-            setEnteredIndoorOutdoor('');
-            setEnteredDistance('');
+            //setEnteredIndoorOutdoor('');
+            //setEnteredDistance('');
             setEnteredCaloriesBurned('');
+            /*
             setEnteredBodyTrainType('');
             setEnteredWeight('');
             setEnteredReps('');
@@ -149,6 +156,8 @@ const EditDeleteItem = () => {
             setEnteredIndoorOutdoorCycling('');
             setEnteredDistanceCycling('');
             setEnteredDistanceSwimming('');
+            */
+           setEnteredHeartRate('');
             
             router.push("/loggedIn");
 
@@ -169,6 +178,21 @@ const EditDeleteItem = () => {
                         onChange={dateHandler}  
                     />
                     <br />
+                </div>
+
+                <div>
+                    <div class = "chunk">
+                        <label for = "heart_rate"> Heart Rate: </label>
+                        <br />
+                            <input id="heart_rate"
+                                type="number"
+                                value={enteredHeartRate}
+                                onChange={heartRateHandler} 
+                            />
+                            <span> bpm</span>
+
+                            <br />
+                    </div>
                 </div>
 
                 <div id="column_container">
@@ -194,7 +218,7 @@ const EditDeleteItem = () => {
                             <br />
                         </div>
 
-                        <div class="chunk">
+                        {/* <div class="chunk">
                             <label for="indoor_outdoor">Indoor or Outdoor Run, Walk, or Jog?</label>
                             <br />
                             <select id="indoor_outdoor"
@@ -219,7 +243,7 @@ const EditDeleteItem = () => {
                             <span> mi</span>
 
                             <br />
-                        </div>
+                        </div> */}
                     
 
                         <div class="chunk">
@@ -237,7 +261,7 @@ const EditDeleteItem = () => {
                         
                     </div>
 
-                    <div class="column">
+                    {/* <div class="column">
 
                         <div class="chunk">
                             <label for="body_train_type">Which part of your body did you train?</label>
@@ -361,11 +385,11 @@ const EditDeleteItem = () => {
                                 value={enteredDistanceSwimming}
                                 onChange={distanceSwimmingHandler}
                             />
-                            <span> mi</span>
+                            <span> mi</span> */}
 
                             <br />
-                        </div>
-                    </div>
+                        {/* </div> */}
+                    {/* </div> */}
                 </div>
         
                 <button id="update_info" onClick={updateItemHandler}>Update Activity</button>
