@@ -27,6 +27,7 @@ const EditDeleteItem = () => {
     //const [enteredDistanceCycling, setEnteredDistanceCycling] = React.useState('');
     //const [enteredDistanceSwimming, setEnteredDistanceSwimming] = React.useState('');
     const [enteredHeartRate, setHeartRate] = React.useState('');
+    const [enteredExerciseDuration, setExerciseDuration] = React.useState('');
 
     const dateHandler = (event) => {
         setEnteredDate(event.target.value);
@@ -93,26 +94,32 @@ const EditDeleteItem = () => {
         setHeartRate(event.target.value);
     }
 
+    const exerciseDurationHandler = (event) => {
+        setExerciseDuration(event.target.value);
+    }
+
     const updateItemHandler = (event) =>{
         event.preventDefault();
         const itemData = {
             date: enteredDate,
             exerciseType: enteredExerciseType,
-            indoorOutdoor: enteredIndoorOutdoor,
-            distance: enteredDistance,
+            //indoorOutdoor: enteredIndoorOutdoor,
+            //distance: enteredDistance,
             caloriesBurned: enteredCaloriesBurned,
-            bodyTrainType: enteredBodyTrainType,
-            weight: enteredWeight,
-            reps: enteredReps,
-            sets: enteredSets,
-            distanceHiking: enteredDistanceHiking,
-            moderateAdvanced: enteredModerateAdvanced,
-            indoorOutdoorCycling: enteredIndoorOutdoorCycling,
-            distanceCycling: enteredDistanceCycling,
-            distanceSwimming: enteredDistanceSwimming
+            //bodyTrainType: enteredBodyTrainType,
+            //weight: enteredWeight,
+            //reps: enteredReps,
+            //sets: enteredSets,
+            //distanceHiking: enteredDistanceHiking,
+            //moderateAdvanced: enteredModerateAdvanced,
+            //indoorOutdoorCycling: enteredIndoorOutdoorCycling,
+            //distanceCycling: enteredDistanceCycling,
+            //distanceSwimming: enteredDistanceSwimming,
+            heartRate: enteredHeartRate,
+            exerciseDuration: enteredExerciseDuration
         };
         console.log(itemData);
-        axios 
+        /*axios 
             .post('http://localhost:8085/api/items', itemData)
             .then((res) => {         
             console.log("Item created successfully.");
@@ -137,6 +144,7 @@ const EditDeleteItem = () => {
             .catch((err) => {
                 console.log("Error in creating item." + err);
             });
+        */
     }
 
     const deleteItemHandler = (event) => {
@@ -247,17 +255,29 @@ const EditDeleteItem = () => {
 
                             <br />
                         </div> */}
-                    
 
                         <div class="chunk">
-                            <label for="calories_burned">Calories burned:</label>
+                            <label for="heart_rate">Heart Rate:</label>
                             <br />
-                            <input id="calories_burned"
+                            <input id="heart_rate"
                                 type="number"
-                                value={enteredCaloriesBurned}
-                                onChange={caloriesHandler}
+                                value={enteredHeartRate}
+                                onChange={heartRateHandler}
                             />
-                            <span> calories</span>
+                            <span> bpm</span>
+
+                            <br />
+                        </div>
+
+                        <div class="chunk">
+                            <label for="exercise_duration">Exercise Duration</label>
+                            <br />
+                            <input id="exercise_duration"
+                                type="number"
+                                value={enteredExerciseDuration}
+                                onChange={exerciseDurationHandler}
+                            />
+                            <span> minutes</span>
 
                             <br />
                         </div>
