@@ -6,10 +6,13 @@ const ItemSchema = new mongoose.Schema({
         required: true
     },
     caloriesBurned: {
-        type: Number
+        type: String
     },
     heartRate: {
-        type: Number
+        type: String
+    },
+    exerciseDuration: {
+        type: String
     },
     date: {    
         type: Date,

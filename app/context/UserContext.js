@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 const UserContext = createContext();
 
@@ -17,8 +18,19 @@ export const UserProvider = ({ children }) => {
                 ...prev,
                 token: token,
             }));
-            // Optionally, you might want to verify the token with your backend here 
-            // and load the user data if the token is still valid.
+            axios.get("http://localhost: 8086/api/users", {
+                headers: { "x-auth-token": token }
+            })
+            .then((res) => {
+                console.log(res.data);
+                setUserData(prev => ({
+                    ...prev,
+                    user: res.data
+                }));
+            })
+            .catch((err) => {
+                console.log("Error in fetching user data: ", err);
+            });
         }
     }, []);
 
