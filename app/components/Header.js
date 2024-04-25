@@ -28,7 +28,11 @@ const Header = () => {
    }
 
    const checkActivityHandler = () => {
-        router.push("/loggedIn");
+        if (userData.token) {   
+            router.push("/loggedIn");
+        } else{
+            router.push("/createAccount");
+        }   
    }
 
     

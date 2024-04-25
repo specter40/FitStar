@@ -5,7 +5,7 @@ import Card from "../components/Card.js";
 import ItemList from "../components/ItemList.js";
 import { useRouter } from "next/navigation";
 
-const DemoPage = (props) => {
+const DemoPage = () => {
     const router = useRouter();
     const items = [
         {   day: "Saturday",
