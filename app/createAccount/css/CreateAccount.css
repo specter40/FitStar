@@ -27,7 +27,7 @@
     font-size: 70px;
 }
 
-h2 {
+.bodyContainer h2 {
     font-family: 'Inika';
     color: #616161;
     text-align: center;
@@ -39,7 +39,7 @@ h2 {
     font-weight: 2;
 }
 
-h3 {
+.bodyContainer h3 {
     font-family: 'Inika';
     color: #616161;
 }
