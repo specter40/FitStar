@@ -6,8 +6,6 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useContext } from 'react';
 import UserContext from '../context/UserContext';
 import axios from 'axios';
-import { useContext } from "react";
-import UserContext from "../context/UserContext";
 
 
 const LoggedPage = () => {
