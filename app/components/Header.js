@@ -30,7 +30,7 @@ const Header = () => {
    const checkActivityHandler = () => {
         if (userData.token) {   
             router.push("/loggedIn");
-        } else{
+        } else {
             router.push("/createAccount");
         }   
    }
@@ -44,9 +44,9 @@ const Header = () => {
             </a>
             <a href="/" className='Fit'>FitStar</a>
             <div className='navbuttons'>
-                <button on onClick={homeHandler}>Home</button>
+                <button onClick={homeHandler}>Home</button>
                 <button onClick={checkActivityHandler}>Check Activity</button>
-                <button on onClick={demoHandler}>Demo</button>
+                <button onClick={demoHandler}>Demo</button>
                 <div>{userData.token ? (<button onClick={handleLogout}>Logout</button> ):( <button onClick={loginHandler}>Login/Create Account</button>)}</div>
                 {/* <button onClick={logHandler}>{statusLog}</button> */}
             </div>

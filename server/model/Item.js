@@ -5,6 +5,10 @@ const ItemSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    user: {
+        type: String,
+        required: true
+    },
     caloriesBurned: {
         type: String
     },
@@ -17,7 +21,6 @@ const ItemSchema = new mongoose.Schema({
     date: {    
         type: Date,
         // default: Date.now,
-    
     }
 });
 

@@ -3,13 +3,16 @@ import axios from 'axios';
 
 // source imports
 import React from 'react';
-
+import { useRouter } from 'next/navigation';
 // css import
 import '../css/AddItem.css';
 
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
 
 const AddItem = () => {
-
+    const router = useRouter();
+    const {userData, setUserData} = useContext(UserContext);
     const [enteredDate, setEnteredDate] = React.useState('');
     const [enteredExerciseType, setEnteredExerciseType] = React.useState('');
     //const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
@@ -94,10 +97,10 @@ const AddItem = () => {
 
     const addItemHandler = (event) =>{
         event.preventDefault();
-        console.log("Add item button clicked");
+        console.log("Add item");
         const itemData = {
             date: enteredDate,
-            exerciseType: enteredExerciseType,
+            exerciseType: enteredExerciseType.toString(),
             //indoorOutdoor: enteredIndoorOutdoor,
             //distance: enteredDistance,
             caloriesBurned: enteredCaloriesBurned,
@@ -111,8 +114,11 @@ const AddItem = () => {
             //distanceCycling: enteredDistanceCycling,
             //distanceSwimming: enteredDistanceSwimming,
             heartRate: enteredHeartRate,
-            exerciseDuration: enteredExerciseDuration
+            exerciseDuration: enteredExerciseDuration,
+            user: userData.user.username
+
         };
+        console.log(enteredExerciseType)
         console.log(itemData);
         axios 
             .post('http://localhost:8085/api/items', itemData)
@@ -123,6 +129,7 @@ const AddItem = () => {
             //setEnteredIndoorOutdoor('');
             //setEnteredDistance('');
             setEnteredCaloriesBurned('');
+            setExerciseDuration('');
             /*
             setEnteredBodyTrainType('');
             setEnteredWeight('');
@@ -140,11 +147,9 @@ const AddItem = () => {
 
             })
             .catch((err) => {
-                console.log("Error in creating item." + err);
+                console.log("Error in creating item." + err.reponse);
             });
     }
-
-    const isLoggedIn = true; 
 
     return (
         <div id="page">

@@ -5,16 +5,20 @@ import ItemList from "../components/ItemList.js";
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useContext } from "react";
+import UserContext from "../context/UserContext";
 
 
-const LoggedPage = (props) => {
+const LoggedPage = () => {
    const [items, setItems] = React.useState([]);
-
-    const router = useRouter()
+    const {userData, setUserData} = useContext(UserContext);
+    const router = useRouter();
+    console.log(userData);
     useEffect (() => {
-        axios.get('http://localhost:8085/api/items')
+        console.log(userData);
+        axios.get('http://localhost:8085/api/items', {params: {user: userData.user.username}})
         .then(res => {
-            //console.log(res.data);
+            console.log(res.data);
             setItems(res.data);
         })
         .catch(err => {

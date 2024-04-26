@@ -5,6 +5,12 @@ var bodyParser = require('body-parser');
 const Item = require('../../model/Item');
 
 router.get('/', (req, res) => {
+    Item.find(req.params.user)
+    .then(items => res.json(items))
+    .catch(err => res.status(404).json({noitemfound: 'No item found'}));
+});
+
+router.get('/', (req, res) => {
     Item.find()
     .then(items => res.json(items))
     .catch(err => res.status(404).json({noitemfound: 'No item found'}));
@@ -20,6 +26,8 @@ router.put('/:id', (req, res) => {
     .then((item)=> res.json({msg: 'Updated successfully'}))
     .catch((err) => res.status(400).json({error: 'Unable to update'}));
 });
+
+
 
 router.delete('/:id', (req, res) => {
     Item.findByIdAndDelete(req.params.id)

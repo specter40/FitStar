@@ -7,9 +7,8 @@ import {useRouter} from 'next/navigation';
 const Homepage = () => {
     const router = useRouter();
     const {userData, setUserData} = useContext(UserContext);
-    console.log(userData);
     const isLoggedIn = userData.user !== undefined;
-
+    
     const startHandler = () => {
         // localStorage.removeItem("auth-token");
         // setUserData({token: undefined, user: undefined});
