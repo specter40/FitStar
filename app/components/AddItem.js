@@ -391,7 +391,7 @@ const AddItem = () => {
                     </div>
                 </div>
                 <form onSubmit={addItemHandler}>
-                    <button id="add_info" type="button" onClick={addItemHandler}>Add to Activity</button>
+                    <button id="add_info" type="submit" onClick={addItemHandler}>Add to Activity</button>
                 </form>
             </div>
         </div>

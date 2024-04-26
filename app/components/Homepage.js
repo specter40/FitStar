@@ -15,7 +15,7 @@ const Homepage = () => {
         if (isLoggedIn) {
             router.push("/loggedIn");
         } else {
-            router.push("/createAccount");
+            router.push("/signIn");
         }
         
     }

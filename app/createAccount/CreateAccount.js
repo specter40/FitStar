@@ -33,6 +33,7 @@ const CreateAccount = () => {
             console.log("great success!");
             console.log(formData);
             await axios.post('http://localhost:8085/api/users/login', {
+                username: formData.username,
                 email: formData.email,
                 password: formData.password
             }).then((loginRes) => {
