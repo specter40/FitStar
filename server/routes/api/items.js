@@ -30,8 +30,6 @@ router.put('/:id', (req, res) => {
     .catch((err) => res.status(400).json({error: 'Unable to update'}));
 });
 
-
-
 router.delete('/:id', (req, res) => {
     Item.findByIdAndDelete(req.params.id)
     .then((item) => res.json({msg: 'Item entry deleted successfully'}))

@@ -8,10 +8,6 @@ import '../css/AddItem.css';
 import axios from 'axios';
 
 const EditDeleteItem = () => {
-
-    /*axios
-        .get('http://localhost:8085/api/items/_______')
-    */
     const [enteredDate, setEnteredDate] = React.useState('');
     const [enteredExerciseType, setEnteredExerciseType] = React.useState('');
     //const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
@@ -147,33 +143,6 @@ const EditDeleteItem = () => {
         */
     }
 
-    const deleteItemHandler = (event) => {
-        event.preventDefault();
-        // HAVE TO GET ITEM ID FIRST, DO THIS EARLIER IN THE PROCESS
-        axios 
-            .delete('http://localhost:8085/api/items', itemData)
-            .then((res) => {         
-            console.log("Item created successfully.");
-            setEnteredDate('');
-            setEnteredExerciseType('');
-            setEnteredIndoorOutdoor('');
-            setEnteredDistance('');
-            setEnteredCaloriesBurned('');
-            setEnteredBodyTrainType('');
-            setEnteredWeight('');
-            setEnteredReps('');
-            setEnteredSets('');
-            setEnteredDistanceHiking('');
-            setEnteredModerateAdvanced('');
-            setEnteredIndoorOutdoorCycling('');
-            setEnteredDistanceCycling('');
-            setEnteredDistanceSwimming('');
-            
-            router.push("/loggedIn");
-
-            })
-    }
-
     const isLoggedIn = true; 
 
     return (
@@ -190,17 +159,17 @@ const EditDeleteItem = () => {
                     <br />
                 </div>
 
-                <div>
-                    <div class = "chunk">
-                        <label for = "calories_burned"> Calories Burned: </label>
-                        <br />
-                            <input id="calories_burned"
-                                type="number"
-                                value={enteredCaloriesBurned}
-                                onChange={caloriesHandler} 
-                            />
-                            <br />
-                    </div>
+                <div class="chunk">
+                    <label for="heart_rate">Heart Rate:</label>
+                    <br />
+                    <input id="heart_rate"
+                        type="number"
+                        value={enteredHeartRate}
+                        onChange={heartRateHandler}
+                    />
+                    <span> bpm</span>
+
+                    <br />
                 </div>
 
                 
@@ -254,17 +223,17 @@ const EditDeleteItem = () => {
                             <br />
                         </div> */}
 
-                        <div class="chunk">
-                            <label for="heart_rate">Heart Rate:</label>
-                            <br />
-                            <input id="heart_rate"
-                                type="number"
-                                value={enteredHeartRate}
-                                onChange={heartRateHandler}
-                            />
-                            <span> bpm</span>
-
-                            <br />
+                        <div>
+                            <div class = "chunk">
+                                <label for = "calories_burned"> Calories Burned: </label>
+                                <br />
+                                    <input id="calories_burned"
+                                        type="number"
+                                        value={enteredCaloriesBurned}
+                                        onChange={caloriesHandler} 
+                                    />
+                                    <br />
+                            </div>
                         </div>
 
                         <div class="chunk">
@@ -414,7 +383,6 @@ const EditDeleteItem = () => {
                 </div>
                 <form>
                     <button id="update_info" type="button" onClick={updateItemHandler}>Update Activity</button>
-                    <button id="delete_info" type="button" onClick={deleteItemHandler}>Delete Activity</button>
                 </form>
             </div>
         </div>
