@@ -21,9 +21,7 @@ const LoggedPage = () => {
                 const res = await axios.get('http://localhost:8085/api/items/' + userData.user.username);
                 console.log(res.data);
                 
-                setItems(() => {
-                    return res.data;
-                });
+                setItems(res.data);
                 const item1 = res.data;
                 console.log(item1);
             } catch (error) {
@@ -33,6 +31,10 @@ const LoggedPage = () => {
         fetchItems();
         
     }, [userData.token]);
+
+    const deleteItem = (itemId) => {
+        setItems(prevItems => prevItems.filter(item => item._id !== itemId));
+    };
     
     return (
         <div className="background">
@@ -40,7 +42,7 @@ const LoggedPage = () => {
             <div className="demo">
                 <div id="toplevel"><h2>Recent Activity</h2><button onClick={() => router.push('/add-activity')}>Add Activity</button> </div>
                 <div>
-                    <ItemList listItems={items.reverse()} />
+                    <ItemList listItems={items.reverse()} setItems={setItems} />
                 </div>
             </div>
         </div>

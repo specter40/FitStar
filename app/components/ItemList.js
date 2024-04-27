@@ -9,8 +9,9 @@ const ItemList = (props) => {
     const deleteItem = async (itemId) => {
         try {
             await axios.delete(`http://localhost:8085/api/items/${itemId}`);
+            const updatedItems = props.listItems.filter(item => item._id !== itemId);
+            props.setItems(updatedItems);
             console.log("Item deleted successfully");
-            props.setListItems(prevItems => prevItems.filter(item => item._id !== itemId));
         } catch (err) {
             console.error("Error deleting item: ", err);
         }
@@ -29,7 +30,7 @@ const ItemList = (props) => {
                         calories={item.caloriesBurned}
                         heart={item.heartRate}          
                     />   
-                    <button onClick={() => deleteItem(item._id)}>Delete</button>
+                    <button className="deleteBt" onClick={() => deleteItem(item._id)}>Delete</button>
                 </div>    
             ))}
             </Card>  
