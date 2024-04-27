@@ -27,12 +27,17 @@ const Item = (props) => {
             return <img className="images" src='/images/weight_training.jpeg' alt="Weight Training" />
         }
         else if (props.activity === "Hiking") {
-            return <img className="images" src='/images/hiking.png' alt="Hiking" />
+            return <img className="images" src='/images/hiking.webp' alt="Hiking" />
+        }
+        else if (props.activity === "Stretching") {
+            return <img className="images" src='/images/stretching.webp' alt="Stretching" />
         }
         else if (props.activity === "Kickboxing") {
             return <img className="images" src='/images/kickboxing.webp' alt="Kickboxing" />
         }
     };
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const day = weekday[new Date(props.date).getDay()];
 
     const clickHandler = () => {
         router.push('/editDeleteActivity');
@@ -42,7 +47,7 @@ const Item = (props) => {
     return (
         <div className='item' onClick={clickHandler}>
             {images()}
-            <h3 id='day'>{props.day}</h3>
+            <h3 id='day'>{day}</h3>
             
                 <div className='grid'>
                 

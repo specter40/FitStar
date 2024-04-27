@@ -12,7 +12,7 @@ import UserContext from '../context/UserContext';
 
 const AddItem = () => {
     const router = useRouter();
-    const {userData, setUserData} = useContext(UserContext);
+    const {userData} = useContext(UserContext);
     const [enteredDate, setEnteredDate] = React.useState('');
     const [enteredExerciseType, setEnteredExerciseType] = React.useState('');
     //const [enteredIndoorOutdoor, setEnteredIndoorOutdoor] = React.useState('');
@@ -31,7 +31,7 @@ const AddItem = () => {
     const [enteredExerciseDuration, setExerciseDuration] = React.useState('');
 
     const dateHandler = (event) => {
-        setEnteredDate(event.target.value);
+        setEnteredDate(event.target.value);        
     };
 
     const exerciseTypeHandler = (event) => {

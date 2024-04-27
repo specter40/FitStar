@@ -9,22 +9,29 @@ import axios from 'axios';
 
 
 const LoggedPage = () => {
-   const [items, setItems] = React.useState([]);
-   const { userData } = useContext(UserContext);
-
+    const [items, setItems] = React.useState([]);
+    const { userData } = useContext(UserContext);
+    
     const router = useRouter()
     useEffect (() => {
         const fetchItems = async () => {
             try {
-                const res = await axios.get('http://localhost:8085/api/items', {
-                    headers: { "x-auth-token": userData.token }
+                // const user1 = userData.user;
+                // console.log(user1.username);
+                const res = await axios.get('http://localhost:8085/api/items/' + userData.user.username);
+                console.log(res.data);
+                
+                setItems(() => {
+                    return res.data;
                 });
-                setItems(res.data);
+                const item1 = res.data;
+                console.log(item1);
             } catch (error) {
                 console.error("Error fetching items: ", error);
             }
         };
         fetchItems();
+        
     }, [userData.token]);
     
     return (
@@ -33,7 +40,7 @@ const LoggedPage = () => {
             <div className="demo">
                 <div id="toplevel"><h2>Recent Activity</h2><button onClick={() => router.push('/add-activity')}>Add Activity</button> </div>
                 <div>
-                    <ItemList listItems={items} />
+                    <ItemList listItems={items.reverse()} />
                 </div>
             </div>
         </div>

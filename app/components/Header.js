@@ -13,6 +13,7 @@ const Header = () => {
    const handleLogout = () => {
     setUserData({token: undefined, user: undefined}); // clear user data
     localStorage.removeItem("auth-token"); // clear token
+    localStorage.removeItem("user"); // clear user
     router.push("/");
     }
 

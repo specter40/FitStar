@@ -42,6 +42,7 @@ const SignIn = () => {
                 user: response.data.user,
             });
             localStorage.setItem("auth-token", response.data.token);
+            localStorage.setItem("user", response.data.user);
             router.push("/loggedIn");
         } catch (error) {
             console.error("Login failed", error);

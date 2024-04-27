@@ -52,6 +52,7 @@ const CreateAccount = () => {
             
             console.log("setUserData Works!");
             localStorage.setItem('auth-token', token1);
+            localStorage.setItem('user', user1);
             console.log("Token Set!");
         });
             router.push("/loggedIn");

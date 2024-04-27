@@ -2,19 +2,22 @@ const express = require('express');
 const router = express.Router();
 var bodyParser = require('body-parser');
 
+
 const Item = require('../../model/Item');
 
-router.get('/', (req, res) => {
-    Item.find(req.params.user)
+router.get('/:user/', (req, res) => {
+    const {user} = req.params;
+
+    Item.find({user})
     .then(items => res.json(items))
     .catch(err => res.status(404).json({noitemfound: 'No item found'}));
 });
 
-router.get('/', (req, res) => {
-    Item.find()
-    .then(items => res.json(items))
-    .catch(err => res.status(404).json({noitemfound: 'No item found'}));
-});
+// router.get('/', (req, res) => {
+//     Item.find()
+//     .then(items => res.json(items))
+//     .catch(err => res.status(404).json({noitemfound: 'No item found'}));
+// });
 router.get('/:id', (req, res) => {
     Item.findById(req.params.id)
     .then(item => res.json(item))

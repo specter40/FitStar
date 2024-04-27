@@ -12,11 +12,11 @@ const ItemList = (props) => {
                 
                     <Item 
                         key={item._id}
-                        day={item.day}
-                        activity={item.activity}
-                        time={item.time}
-                        calories={item.calories}
-                        heart={item.heart}          
+                        date={item.date}
+                        activity={item.exerciseType}
+                        time={item.exerciseDuration}
+                        calories={item.caloriesBurned}
+                        heart={item.heartRate}          
                     />   
                       
             ))}
