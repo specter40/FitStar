@@ -192,15 +192,13 @@ const EditDeleteItem = () => {
 
                 <div>
                     <div class = "chunk">
-                        <label for = "heart_rate"> Heart Rate: </label>
+                        <label for = "calories_burned"> Calories Burned: </label>
                         <br />
-                            <input id="heart_rate"
+                            <input id="calories_burned"
                                 type="number"
-                                value={enteredHeartRate}
-                                onChange={heartRateHandler} 
+                                value={enteredCaloriesBurned}
+                                onChange={caloriesHandler} 
                             />
-                            <span> bpm</span>
-
                             <br />
                     </div>
                 </div>
