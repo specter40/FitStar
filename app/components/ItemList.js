@@ -23,7 +23,7 @@ const ItemList = (props) => {
             {props.listItems.map((item) => (
                 <div key={item._id}>
                     <Item 
-                        key={item._id}
+                        objectID={item._id}
                         date={item.date}
                         activity={item.exerciseType}
                         time={item.exerciseDuration}

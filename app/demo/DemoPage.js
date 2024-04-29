@@ -1,13 +1,34 @@
 "use client"
 import "./css/DemoPage.css";
-import React from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Card from "../components/Card.js";
 import ItemList from "../components/ItemList.js";
 import { useRouter } from "next/navigation";
+import { resolve } from "styled-jsx/css";
+import axios from "axios";
+import UserContext from '../context/UserContext';
 
 const DemoPage = () => {
     const router = useRouter();
-    const items = [
+
+    const [userItems, setUserItems] = useState([]);
+    const {userData} = useContext(UserContext);
+    //console.log(userData);
+    
+    // calling mongo for data for user items 
+    const getUserItems = async (user) => {
+        try {
+            await axios.get(`http://localhost:8085/api/items/${user}`)
+                .then(res => {
+                    setUserItems(res.data);
+                    console.log(userItems);
+                });
+        } catch (err) {
+            console.error('Error: ', err);
+        }
+    };
+
+    /*const items = [
         {   day: "Saturday",
             activity: "Cycling",
             time: 60,
@@ -44,7 +65,11 @@ const DemoPage = () => {
         calories: 300,
         heart: 120
         }
-    ]
+    ];*/
+
+    useEffect(() => {
+        getUserItems(userData.user.username);
+    }, []);
     
     return (
         <div className="background">
@@ -53,7 +78,7 @@ const DemoPage = () => {
                 <div className="demo">
                     <div><h2>Recent Activity</h2><button onClick={() => router.push('/add-activity')}>Add Activity</button> </div>
                     <div>
-                        <ItemList listItems={items} />
+                        <ItemList listItems={userItems} />
                     </div>
                 </div>
             </div>

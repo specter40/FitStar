@@ -1,14 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/Item.css';
 import {useRouter} from 'next/navigation';
- 
+import Header from './Header';
+import EditDeleteItem from '../editDeleteActivity/EditDeleteItem';
 
 
 const Item = (props) => {   
 
     const router = useRouter();
+    const itemID = props.objectID;
+    //console.log(itemID);
 
     const images = () => {
         if (props.activity === "Running") {
@@ -39,34 +42,61 @@ const Item = (props) => {
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     const day = weekday[new Date(props.date).getDay()];
 
-    const clickHandler = () => {
-        router.push('/editDeleteActivity');
-        console.log('div clicked');
-    }
+    const [showEDI, setShowEDI] = useState(false);
+    const [showItem, setShowItem] = useState(true);
+
+    const clickHandler = (id) => {
+        // using router.push to move from here to EditDeleteItem
+        /*router.push(`/editDeleteActivity?id=${id}`);
+        console.log("editDeleteActivity page pushed with item id: ", itemID);*/
+        //console.log(propFromHandler);
+        setShowEDI(true);
+        setShowItem(false);
+        console.log("are we showing EditDeleteItem?", showEDI);
+    };
 
     return (
-        <div className='item' onClick={clickHandler}>
-            {images()}
-            <h3 id='day'>{day}</h3>
-            
-                <div className='grid'>
-                
-                <div className="activity">
-                    <p className='categories'>Activity:</p><p>{props.activity}</p>
+        <div>
+            <div>
+                {showItem
+                &&
+                <div className='item' onClick={(event) => clickHandler(itemID)}>
+                    {images()}
+                    <h3 id='day'>{day}</h3>
+                    
+                        <div className='grid'>
+                        
+                        <div className="activity">
+                            <p className='categories'>Activity:</p><p>{props.activity}</p>
+                        </div>
+                        <div className="time">
+                            <p className='categories'>Time: </p> <p>{props.time} minutes</p>
+                        </div>
+                        <div className="calories">
+                            <p className='categories'>Calories:</p> <p> {props.calories}</p>
+                        </div>
+                        <div className="heart">
+                            <p className='categories'> Heart Rate:</p> <p> {props.heart}</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="time">
-                    <p className='categories'>Time: </p> <p>{props.time} minutes</p>
-                </div>
-                <div className="calories">
-                    <p className='categories'>Calories:</p> <p> {props.calories}</p>
-                </div>
-                <div className="heart">
-                    <p className='categories'> Heart Rate:</p> <p> {props.heart}</p>
-                </div>
+                }       
+            </div>
+            <div>
+                {showEDI 
+                && 
+                <EditDeleteItem 
+                    itemID={props.objectID}
+                    date={props.date}
+                    activity={props.activity}
+                    time={props.time}
+                    calories={props.calories}
+                    heart={props.heart}
+                />
+                }
             </div>
         </div>
-
-
+        
     );
 
 
