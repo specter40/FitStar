@@ -190,17 +190,16 @@ const AddItem = () => {
                                 value={enteredExerciseType}
                                 onChange={exerciseTypeHandler}
                             >
-                                <option>Weight Training</option>
-                                <option>Running</option>
-                                <option>Stretching</option>
-                                <option>Walking</option>
-                                <option>Jogging</option>
-                                <option>Cycling</option>
-                                <option>Swimming</option>
-                                <option>Hiking</option>
-                                <option>Kickboxing</option>
+                                <option value="Weight Training">Weight Training</option>
+                                <option value="Running">Running</option>
+                                <option value="Stretching">Stretching</option>
+                                <option value="Walking">Walking</option>
+                                <option value="Jogging">Jogging</option>
+                                <option value="Cycling">Cycling</option>
+                                <option value="Swimming">Swimming</option>
+                                <option value="Hiking">Hiking</option>
+                                <option value="Kickboxing">Kickboxing</option>
                             </select>
-
                             <br />
                         </div>
 
