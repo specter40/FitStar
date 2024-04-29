@@ -3,7 +3,7 @@
 
 .page {
     background-image: url('/images/Background.jpg');
-    margin: 0px;
+    margin: 5px;
     padding: 450px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,14 +24,14 @@
     position: absolute;
     top: 25%;
     left: 15%;
-    font-size: 70px;
+    font-size: 80px;
 }
 
 .bodyContainer h2 {
     font-family: 'Inika';
     color: #616161;
     text-align: center;
-    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: #616161;
     font-style: normal;
     font-size: 40px;
@@ -78,4 +78,8 @@ input {
 .submitBt:hover {
     margin: auto;
     margin-top: 30px;
+}
+
+#error {
+    color : red;
 }

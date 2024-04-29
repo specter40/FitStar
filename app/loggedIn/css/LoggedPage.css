@@ -1,17 +1,28 @@
 /* imports the Inika font */
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+.background {
+    background-image: url('/images/Background.jpg');
+    margin: 0;
+    padding: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    font-family: Inika;
+}
 .demo {
-    flex-shrink: 0;
+    flex-shrink: 4;
     justify-content: center;
     position: relative;
     bottom: 100px;
-    border-radius: 69px;
+    border-radius: 50px;
     background: rgba(76, 92, 126, 0.80);
-    padding: 70px;
+    padding: 10px;
 }
 
 #toplevel {
     display: inline;
+    text-align: center;
 }
 
 .background h1 {
@@ -39,16 +50,4 @@
     font-weight: bold;
     font-size: 60px;
     margin: 0px;
-}
-
-.background {
-    background-image: url('/images/Background.jpg');
-    margin: 0;
-    padding: 450px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    justify-content: center;
-    font-family: Inika;
-    
 }

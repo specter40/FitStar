@@ -5,7 +5,7 @@ import React from 'react';
 import {useRouter} from 'next/router';
 
 // css import
-import '../css/AddItem.css';
+import './css/EditDeleteItem.css';
 import axios from 'axios';
 
 const EditDeleteItem = (props) => {
@@ -28,7 +28,7 @@ const EditDeleteItem = (props) => {
     const exerciseTypeHandler = (event) => {
         const selectedOptions = Array.from(event.target.selectedOptions, option => option.value);
         setEnteredExerciseType(selectedOptions);
-    };
+    };    
 
     const caloriesHandler = (event) => {
         setEnteredCaloriesBurned(event.target.value);

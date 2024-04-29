@@ -46,6 +46,7 @@ const SignIn = () => {
             router.push("/loggedIn");
         } catch (error) {
             console.error("Login failed", error);
+            setError("Invalid Email or Password");
             //handle login error
         }
     };
@@ -65,6 +66,7 @@ const SignIn = () => {
                     <h3>Password</h3>
                     <input name="password" type="password" value={formData.password} onChange={handleChange} />
                     <button className="submitBt" type="submit">Login</button>
+                    <div><h3 id="error">{error}</h3></div>
                     <h3>Don't have an account? <Link href="/createAccount">Create Account</Link></h3>
                 </div>
             </form>
