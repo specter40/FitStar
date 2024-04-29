@@ -1,72 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
 
+/* Global styles */
+body {
+    font-family: 'Inika', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+/* Page container */
 #page {
     background-color: #293143;
     display: flex;
     justify-content: center;
+    min-height: 100vh; /* Ensure the page covers the full viewport height */
+    padding: 40px; /* Add some padding for better spacing */
 }
 
+/* Main form container */
 #main_form {
     background-color: #D9D9D9;
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 40px;
-    border-radius: 50px;
+    width: 100%;
+    max-width: 600px; /* Limit the width of the form */
     padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
 }
 
-    .date_style {
-        font-size: 50px;
-        border-radius: 15px;
-    }
+/* Date input */
+.date_style {
+    font-size: 30px;
+    border-radius: 15px;
+    padding: 10px; /* Add some padding for better spacing */
+    margin-bottom: 20px; /* Add margin to separate from other elements */
+}
 
+/* Column container */
 #column_container {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    flex-wrap: wrap; /* Allow columns to wrap to the next row */
+    gap: 20px; /* Add some space between columns */
 }
 
-    .column {
-        flex: 1;
-    }
-
-    .chunk {
-        padding: 15px;
-    }
-
-#add_info {
-    background-color: rgba(94, 141, 147, 1);
-
+/* Individual column */
+.column {
+    flex: 1;
+    min-width: 200px; /* Set a minimum width for the columns */
 }
 
-label, input, option, span, button {
-    font-family: 'Inika';
-}
-
-label, span {
+/* Form elements */
+label {
+    font-size: 18px;
     color: rgba(86, 95, 97);
+    margin-bottom: 5px; /* Add some space below the label */
 }
 
-input, select, option {
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
     color: rgba(86, 95, 97, 0.7);
+    margin-bottom: 10px; /* Add some space below the input/select */
+}
+
+button {
+    background-color: rgba(94, 141, 147, 1);
+    color: white;
     border: none;
     border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-label {
-    
+button:hover {
+    background-color: rgba(94, 141, 147, 0.8);
+}
+/* Heart rate input */
+#heart_rate {
+    width: 150px; /* Set a specific width for the input */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #56605F;
+    margin-bottom: 10px; /* Add some space below the input */
 }
 
-input {
-
+/* Calories burned input */
+#calories_burned {
+    width: 150px; /* Set a specific width for the input */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #56605F;
+    margin-bottom: 10px; /* Add some space below the input */
 }
 
-option {
-
+/* Exercise duration input */
+#exercise_duration {
+    width: 150px; /* Set a specific width for the input */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #56605F;
+    margin-bottom: 10px; /* Add some space below the input */
 }
-
+/* Exercise type select */
+#exercise_type {
+    width: 200px; /* Set a specific width for the select */
+    height: 100px; /* Set a specific height for the select */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #56605F;
+    margin-bottom: 10px; /* Add some space below the select */
+}
+/* Date input */
+#date {
+    width: 350px;
+    height: 30px; /* Set a specific height for the date input */
+    padding: 18px ;
+    border: 5px solid #ccc;
+    border-radius: 1px;
+    font-size: 30px;
+    color: #56605F;
+    margin-bottom: 10px;
+}
