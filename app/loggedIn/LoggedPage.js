@@ -40,13 +40,28 @@ const LoggedPage = () => {
         <div className="background">
             <h1>Hello {userData.user ? userData.user.username : 'User'}!</h1>
             <div className="demo">
-                <div id="toplevel"><h2>Recent Activity</h2><button onClick={() => router.push('/add-activity')}>Add Activity</button> </div>
+                <div id="toplevel">
+                    <h2>Recent Activity</h2>
+                    <button onClick={() => router.push('/add-activity')}>Add Activity</button>
+                </div>
                 <div>
                     <ItemList listItems={items.reverse()} setItems={setItems} />
                 </div>
             </div>
         </div>
     );
+    
+    // return (
+    //     <div className="background">
+    //         <h1>Hello {userData.user ? userData.user.username : 'User'}!</h1>
+    //         <div className="demo">
+    //             <div id="toplevel"><h2>Recent Activity</h2><button onClick={() => router.push('/add-activity')}>Add Activity</button> </div>
+    //             <div>
+    //                 <ItemList listItems={items.reverse()} setItems={setItems} />
+    //             </div>
+    //         </div>
+    //     </div>
+    // );
 };
 
 export default LoggedPage;

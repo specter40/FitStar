@@ -73,10 +73,10 @@ const Item = (props) => {
                             <p className='categories'>Time: </p> <p>{props.time} minutes</p>
                         </div>
                         <div className="calories">
-                            <p className='categories'>Calories:</p> <p> {props.calories}</p>
+                            <p className='categories'>Calories:</p> <p> {props.calories} calories</p>
                         </div>
                         <div className="heart">
-                            <p className='categories'> Heart Rate:</p> <p> {props.heart}</p>
+                            <p className='categories'> Heart Rate:</p> <p> {props.heart} bpm</p>
                         </div>
                     </div>
                 </div>
