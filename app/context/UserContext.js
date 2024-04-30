@@ -18,7 +18,7 @@ export const UserProvider = ({ children }) => {
                 ...prev,
                 token: token,
             }));
-            axios.get("http://localhost: 8086/api/users", {
+            axios.get("http://localhost:8085/api/users/", {
                 headers: { "x-auth-token": token }
             })
             .then((res) => {
