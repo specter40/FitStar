@@ -13,24 +13,29 @@ const LoggedPage = () => {
     const { userData } = useContext(UserContext);
     
     const router = useRouter()
+
+    const fetchItems = async () => {
+        try {
+            // const user1 = userData.user;
+            // console.log(user1.username);
+            const res = await axios.get('http://localhost:8085/api/items/' + userData.user.username);
+            console.log(res.data);
+            
+            setItems(res.data);
+            const item1 = res.data;
+            console.log(item1);
+        } catch (error) {
+            console.error("Error fetching items: ", error);
+        }
+    };
     useEffect (() => {
-        const fetchItems = async () => {
-            try {
-                // const user1 = userData.user;
-                // console.log(user1.username);
-                const res = await axios.get('http://localhost:8085/api/items/' + userData.user.username);
-                console.log(res.data);
-                
-                setItems(res.data);
-                const item1 = res.data;
-                console.log(item1);
-            } catch (error) {
-                console.error("Error fetching items: ", error);
-            }
-        };
         fetchItems();
         
     }, [userData.token]);
+
+    const updateItemList = () => {
+        fetchItems();
+    }
 
     const deleteItem = (itemId) => {
         setItems(prevItems => prevItems.filter(item => item._id !== itemId));
@@ -45,7 +50,7 @@ const LoggedPage = () => {
                     <button onClick={() => router.push('/add-activity')}>Add Activity</button>
                 </div>
                 <div>
-                    <ItemList listItems={items.reverse()} setItems={setItems} />
+                    <ItemList listItems={items.reverse()} setItems={setItems} updateAllItems={updateItemList}/>
                 </div>
             </div>
         </div>

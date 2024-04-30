@@ -16,6 +16,16 @@ const ItemList = (props) => {
             console.error("Error deleting item: ", err);
         }
     };
+
+    const updateItem = async (itemId, updatedItemData) => {
+        try {
+            await axios.put(`http://localhost:8085/api/items/${itemId}`, updatedItemData);
+            props.updateAllItems(); 
+            console.log("Item updated successfully");
+        } catch (err) {
+            console.error("Error updating item: ", err);
+        }
+    };
     
     return (
         <div>
@@ -28,7 +38,8 @@ const ItemList = (props) => {
                         activity={item.exerciseType}
                         time={item.exerciseDuration}
                         calories={item.caloriesBurned}
-                        heart={item.heartRate}          
+                        heart={item.heartRate}   
+                        updateItem={updateItem}       
                     />   
                     <button className="deleteBt" onClick={() => deleteItem(item._id)}>Delete</button>
                 </div>    

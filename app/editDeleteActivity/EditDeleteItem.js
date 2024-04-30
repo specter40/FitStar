@@ -2,24 +2,21 @@
 
 // source imports
 import React from 'react';
-import {useRouter} from 'next/router';
 
 // css import
 import './css/EditDeleteItem.css';
 import axios from 'axios';
 
 const EditDeleteItem = (props) => {
-    //const router = useRouter();
+
 
     const [enteredDate, setEnteredDate] = React.useState(props.date);
-    //const [enteredExerciseType, setEnteredExerciseType] = React.useState(props.activity);
-    // ***** THIS IS WHERE I AM RIGHT NOW, TRYING TO FIGURE OUT HOW TO MAKE THE FORM SELECT PROPS.ACTIVITY *******
     const [enteredExerciseType, setEnteredExerciseType] = React.useState(props.activity || []);
     const [enteredCaloriesBurned, setEnteredCaloriesBurned] = React.useState(props.calories);
     const [enteredHeartRate, setHeartRate] = React.useState(props.heart);
     const [enteredExerciseDuration, setExerciseDuration] = React.useState(props.time);
 
-    console.log(props);
+    //console.log(props);
 
     const dateHandler = (event) => {
         setEnteredDate(event.target.value);
@@ -52,7 +49,9 @@ const EditDeleteItem = (props) => {
             exerciseDuration: enteredExerciseDuration
         };
         console.log(itemData);
-        axios 
+        // PUT METHOD MOVED TO ITEMLIST SO THAT LIST CAN UPDATE 
+        // WHEN UPDATE ITEM IS CLICKED IN EDI
+        /*axios 
             .put(`http://localhost:8085/api/items/${props.itemID}`, itemData)
             .then((res) => {         
                 console.log("Item created successfully");
@@ -64,9 +63,18 @@ const EditDeleteItem = (props) => {
             })
             .catch((err) => {
                 console.log("Error in creating item." + err);
-            });
+            });*/
 
-        //router.push("/loggedIn");
+
+        props.setShowItem(true);
+        props.setShowEDI(false);
+        props.updateItem(props.itemID, itemData);
+
+        setEnteredDate('');
+        setEnteredExerciseType('');
+        setEnteredCaloriesBurned('');
+        setHeartRate('');
+        setExerciseDuration('');
     } 
 
 
