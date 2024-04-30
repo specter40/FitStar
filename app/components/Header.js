@@ -4,6 +4,7 @@ import '../css/Header.css'
 import {useRouter} from 'next/navigation'
 import UserContext from '../context/UserContext';
 import { useContext } from 'react';
+import Link from 'next/link';
 
 
 const Header = () => {  
@@ -40,10 +41,10 @@ const Header = () => {
     
     return (
         <header>
-            <a href="/" className='logo'>
+            <Link href="/" className='logo'>
                 <img src='/images/logo.png' alt="Logo" />
-            </a>
-            <a href="/" className='Fit'>FitStar</a>
+            </Link>
+            <Link href="/" className='Fit'>FitStar</Link>
             <div className='navbuttons'>
                 <button onClick={homeHandler}>Home</button>
                 <button onClick={checkActivityHandler}>Check Activity</button>

@@ -42,6 +42,11 @@ const Item = (props) => {
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     const day = weekday[new Date(props.date).getDay()];
 
+    const date = new Date(props.date);
+    const dayNum = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const fullDate = month + "/" + dayNum + "/" + year;
     const [showEDI, setShowEDI] = useState(false);
     const [showItem, setShowItem] = useState(true);
 
@@ -63,7 +68,7 @@ const Item = (props) => {
                 <div className='item' onClick={(event) => clickHandler(itemID)}>
                     {images()}
                     <h3 id='day'>{day}</h3>
-                    
+                    <div><h3 id='dateInitial'>{fullDate}</h3></div>
                         <div className='grid'>
                         
                         <div className="activity">

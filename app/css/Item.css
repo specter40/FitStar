@@ -40,3 +40,8 @@
 #day {
     font-size: 30px;
 }
+#dateInitial {
+    position: relative;
+    font-size: 20px;
+    bottom: 35px;
+}
