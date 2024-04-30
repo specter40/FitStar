@@ -44,7 +44,7 @@ const Item = (props) => {
     const day = weekday[new Date(props.date).getDay()];
 
     const date = new Date(props.date);
-    const dayNum = date.getDate();
+    const dayNum = date.getDate() + 1;
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
     const fullDate = month + "/" + dayNum + "/" + year;
