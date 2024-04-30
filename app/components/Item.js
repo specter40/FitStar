@@ -5,6 +5,7 @@ import '../css/Item.css';
 import {useRouter} from 'next/navigation';
 import Header from './Header';
 import EditDeleteItem from '../editDeleteActivity/EditDeleteItem';
+import axios from 'axios';
 
 
 const Item = (props) => {   
@@ -51,13 +52,8 @@ const Item = (props) => {
     const [showItem, setShowItem] = useState(true);
 
     const clickHandler = (id) => {
-        // using router.push to move from here to EditDeleteItem
-        /*router.push(`/editDeleteActivity?id=${id}`);
-        console.log("editDeleteActivity page pushed with item id: ", itemID);*/
-        //console.log(propFromHandler);
         setShowEDI(true);
         setShowItem(false);
-        console.log("are we showing EditDeleteItem?", showEDI);
     };
 
     return (
@@ -97,6 +93,9 @@ const Item = (props) => {
                     time={props.time}
                     calories={props.calories}
                     heart={props.heart}
+                    setShowEDI={setShowEDI}
+                    setShowItem={setShowItem}
+                    updateItem={props.updateItem}
                 />
                 }
             </div>
